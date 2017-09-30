@@ -1,0 +1,91 @@
+/**
+ * Created by 熊超超 on 2017/8/4.
+ */
+@import "./vars";
+@import "~muse-ui/less/theme.less";
+
+#app {
+  // 覆盖组件库的样式
+  .mu-list{
+    padding: 0;
+    margin: 12px 0;
+  }
+  .mu-raised-button{
+    font-size: 16px;
+  }
+  .mu-list .mu-sub-header:first-child {
+    margin-top: 0;
+  }
+  // appBar样式
+  .mu-appbar{
+    height: 1rem;
+    padding:0;
+    position: relative;
+
+    .mu-appbar-title {
+      line-height: 1rem;
+      text-align: center;
+      padding-left: 5px;
+      font-size: 40/@rem;
+    }
+    .left, .right{
+      position: absolute;
+      top:0;
+    }
+    .right{
+      right: 0;
+    }
+  }
+  // footerBar样式
+  .mu-bottom-nav{
+    height: 1rem;
+
+    .mu-buttom-item{
+      max-width: none;
+
+      .mu-buttom-item-wrapper{
+        line-height: 0.2rem;
+
+        .mu-badge{
+          font-size: 0.2rem;
+        }
+        .mu-badge-circle{
+          width: 0.3rem;
+          height:0.3rem;
+        }
+        .mu-badge-float{
+          top: -0.08rem;
+          right: -0.16rem;
+        }
+      }
+    }
+    .mu-bottom-item-active svg{
+      color: @primaryColor;
+    }
+  }
+  // 白色背景的tabs样式
+  .mu-tabs-white{
+    background-color: #FFFFFF;
+
+    .mu-tab-link{
+      color: @darkBlack;
+    }
+    .mu-tab-active.mu-tab-link{
+      color: @accentColor;
+    }
+  }
+  // toast样式
+  .mu-toast{
+    width: initial !important;
+    min-width: initial !important;
+    height: 40px;
+    line-height: 40px;
+    left: 50%;
+    right: auto;
+    top: auto !important;
+    //top: calc(~"100% - 16px - 40px");
+    bottom: calc(~"1rem + 16px") !important;
+    transform: translate(-50%, 0);
+    display: inline !important;
+  }
+}

@@ -1,0 +1,158 @@
+/**
+ * Created by 熊超超 on 2017/8/4.
+ */
+@import "./vars";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  touch-action: manipulation;
+}
+
+body, button, select, input, textarea {
+  font-size: 14px;
+  background-color: @grey50;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+.content-view {
+  position: relative;
+  >div{
+    height: ~'calc(100vh - 2rem)';
+    width: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  &.no-footer > div{
+    height: ~'calc(100vh - 1rem)';
+  }
+}
+
+// 生成从2-100，步进为2的间距样式
+.generate-space(100);
+.generate-space(@n, @i: 0) when (@i =< @n) {
+  .generate-space(@n, (@i + 2));
+  .f-@{i} {
+    font-size: @i/@rem;
+  }
+  .m-@{i} {
+    margin-left: @i/@rem;
+    margin-right: @i/@rem;
+    margin-top: @i/@rem;
+    margin-bottom: @i/@rem;
+  }
+  .m-v-@{i} {
+    margin-top: @i/@rem;
+    margin-bottom: @i/@rem;
+  }
+  .m-h-@{i} {
+    margin-left: @i/@rem;
+    margin-right: @i/@rem;
+  }
+  .m-t-@{i} {
+    margin-top: @i/@rem;
+  }
+  .m-b-@{i} {
+    margin-bottom: @i/@rem;
+  }
+  .m-l-@{i} {
+    margin-left: @i/@rem;
+  }
+  .m-r-@{i} {
+    margin-right: @i/@rem;
+  }
+  .p-@{i} {
+    padding-left: @i/@rem;
+    padding-right: @i/@rem;
+    padding-top: @i/@rem;
+    padding-bottom: @i/@rem;
+  }
+  .p-v-@{i} {
+    padding-top: @i/@rem;
+    padding-bottom: @i/@rem;
+  }
+  .p-h-@{i} {
+    padding-left: @i/@rem;
+    padding-right: @i/@rem;
+  }
+  .p-t-@{i} {
+    padding-top: @i/@rem;
+  }
+  .p-b-@{i} {
+    padding-bottom: @i/@rem;
+  }
+  .p-l-@{i} {
+    padding-left: @i/@rem;
+  }
+  .p-r-@{i} {
+    padding-right: @i/@rem;
+  }
+}
+
+.b-b {
+  border-bottom: 1px solid @borderColor;
+}
+
+.b-t {
+  border-top: 1px solid @borderColor;
+}
+
+.c-base {
+  color: @textColor;
+}
+
+.c-gary {
+  color: @secondaryTextColor
+}
+
+.a-l {
+  text-align: left;
+}
+
+.a-c {
+  text-align: center;
+}
+
+.a-r {
+  text-align: right;
+}
+.bg-grey {
+  background-color: @grey300;
+}
+.bg-white {
+  background-color: @white;
+}
+
+.o-h{ overflow: hidden;}.o-x-h{ overflow-x: hidden;}.o-y-h{ overflow-y: hidden;}
+.o-a{ overflow: auto;}.o-x-a{ overflow-x: auto;}.o-y-a{ overflow-y: auto;}
+.o-s{ overflow: scroll;}.o-x-s{ overflow-x: scroll;}.o-y-s{ overflow-y: scroll;}
+
+.iblock{ display: inline-block;}.iline { display: inline;}.block{ display: block;}
+
+.nowrap{ white-space: nowrap;}
+
+.t-i-1em{ text-indent: 1em;}
+
+.relative{ position: relative;}.absolute{ position: absolute;}
+
+.one-line{ overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
