@@ -36,10 +36,6 @@ npm run build  #发布
 │   │   ├── js                       # 工具类js、全局js方法
 │   ├─ global                        # 网络请求统一出口、全局路由、全局store、mixin等
 │   ├─ baseComponents                # 业务无关的公共组件
-│   ├─ router                        # Redux相关文件目录
-│   ├─ router                        # Redux相关文件目录
-│   │   ├── rootRoutes.js           # 组合所有子模块的路由
-│   │   ├── RouteWithSubRoutes.js   # 可递归嵌套的路由组件
 │   └─ module                        # 业务模块目录
 │       ├── common                  # 公共模块
 │       └── demo                    # 模块目录
