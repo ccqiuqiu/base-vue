@@ -1,7 +1,7 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
-    <p>demo</p>
+    <p @click="testAsync">demo</p>
   </div>
 </template>
 
@@ -23,7 +23,15 @@
       })
     },
     methods: {
-      // 查询航班
+      async testAsync () {
+        const data = await this.$store.dispatch('testAsync')
+        console.log(data)
+      },
+      test () {
+        this.$store.dispatch('searchFlight').then(data => {
+          this.$router.push('/passenger/list')
+        })
+      }
     }
   }
 </script>

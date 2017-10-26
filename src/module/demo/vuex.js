@@ -7,6 +7,12 @@ export default {
     todos: {}
   },
   mutations: {},
-  actions: {},
+  actions: {
+    testAsync ({state, commit, rootState}, params) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(123), 2000)
+      })
+    }
+  },
   getters: {}
 }
