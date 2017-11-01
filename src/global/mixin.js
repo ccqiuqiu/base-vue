@@ -4,7 +4,7 @@
 
 export default {
   updateBar: {
-    created: function () {
+    created () {
       if (this.headerBar) {
         let headerBar = this.headerBar
         if (typeof headerBar === 'string') {
