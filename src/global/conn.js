@@ -7,7 +7,7 @@ import store from './store'
 
 // 创建一个axios实例
 const axiosInstance = axios.create({
-  baseURL: 'http://58.63.109.151:8087/mobile.ashx?action=flightinfo-CabinService',
+  baseURL: 'https://www.easy-mock.com/mock/597973d3a1d30433d83f11e7/base',
   headers: {
     'Content-Type': 'application/json'
   },
