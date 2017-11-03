@@ -58,19 +58,7 @@ const store = new Vuex.Store({
   actions: actions,
   modules: {}
 })
+
 export default store
 export const modulesMap = {} // 存储异步加载的模块名，为了防止多次加载
 
-// 热重载
-// if (module.hot) {
-//   module.hot.accept(['./modules/a'], () => {
-//     // 获取更新后的模块
-//     const newModuleA = require('./modules/a').default
-//     // 加载新模块
-//     store.hotUpdate({
-//       modules: {
-//         a: newModuleA
-//       }
-//     })
-//   })
-// }

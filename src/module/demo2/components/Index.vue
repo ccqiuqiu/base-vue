@@ -16,6 +16,14 @@
         modulesMap['demo2'] = true
         this.$store.registerModule('demo2', vuex)
       }
+      // 热重载
+      if (module.hot) {
+        module.hot.accept(['../vuex'], () => {
+          this.$store.hotUpdate({
+            modules: {demo2: vuex}
+          })
+        })
+      }
     }
   }
 </script>

@@ -4,8 +4,8 @@
 import conn from '../../global/conn'
 
 export default {
-  searchFlight: data => {
-    return conn.get('', {params: data})
+  todos: data => {
+    return conn.get('/todo', {params: data})
     // .then(res => ({res})).catch(err => ({err}))
   }
 }

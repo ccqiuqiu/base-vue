@@ -1,7 +1,8 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
-    <p @click="testAsync">demo</p>
+    <p @click="testAsync">异步写法</p>
+    <p @click="test">Promise写法</p>
   </div>
 </template>
 
@@ -25,11 +26,11 @@
     methods: {
       async testAsync () {
         const data = await this.$store.dispatch('testAsync')
-        console.log(data)
+        console.log(data, 1234)
       },
       test () {
-        this.$store.dispatch('searchFlight').then(data => {
-          this.$router.push('/passenger/list')
+        this.$store.dispatch('test').then(data => {
+          console.log(data)
         })
       }
     }
