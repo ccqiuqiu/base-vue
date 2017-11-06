@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/vuex-2.3.1-35495e.svg)
 ![](https://img.shields.io/badge/vueRouter-2.7.0-9c76cb.svg)
 
-[预览](http://ccqiuqiu.win/demo/base-vue)
+[预览](http://ccqiuqiu.win/demo/base-vue/index.html)
 
 # 主要技术栈
 - vue

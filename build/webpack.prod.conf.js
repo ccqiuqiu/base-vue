@@ -31,10 +31,13 @@ var webpackConfig = merge(baseWebpackConfig, {
       'process.env': env
     }),
     new webpack.optimize.UglifyJsPlugin({
+      beautify: false,      // 最紧凑的输出
+      comments: false,      // 删除所有的注释
       compress: {
-        warnings: false
+        warnings: false,   //不输出警告
+        drop_console: true // 删除所有的 `console` 语句
       },
-      sourceMap: true
+      sourceMap: false
     }),
     // extract css into its own file
     new ExtractTextPlugin({
