@@ -7,11 +7,11 @@ import store from './store'
 
 // 创建一个axios实例
 const axiosInstance = axios.create({
-  baseURL: 'https://www.easy-mock.com/mock/597973d3a1d30433d83f11e7/base',
+  baseURL: 'http://97.64.31.179:3000/v1',
   headers: {
     'Content-Type': 'application/json'
   },
-  // withCredentials: true,
+  withCredentials: true,
   timeout: 45000// 请求超时时间
 })
 // 注册请求拦截器

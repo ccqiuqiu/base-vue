@@ -1,6 +1,8 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
+    <p @click="login">先点击登录，下面的接口才有权限</p>
+
     <p @click="testAsync">异步写法</p>
     <p @click="test">Promise写法</p>
   </div>
@@ -9,6 +11,7 @@
 <script>
   import {mapState} from 'vuex'
   import mixin from '$g/mixin'
+  import md5 from '$js/md5'
 
   export default {
     mixins: [mixin.updateBar],
@@ -24,14 +27,20 @@
       })
     },
     methods: {
+      async login () {
+        const data = await this.$store.dispatch('login', {userName: 'cc', passWord: md5('123456')})
+        if (data) {
+          this.$alert('登录成功')
+        }
+      },
       async testAsync () {
         const data = await this.$store.dispatch('testAsync')
-        console.log(data, 1234)
+        this.$alert(data)
       },
       test () {
         this.$store.dispatch('test').then(data => {
-          console.log(data)
-        })
+          this.$alert(data)
+        }).catch(err => this.$alert(err))
       }
     }
   }
