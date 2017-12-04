@@ -27,7 +27,7 @@ axiosInstance.interceptors.request.use(config => {
 axiosInstance.interceptors.response.use(response => {
   store.commit('hideLoading')
   if (response.data.success) {
-    return Promise.resolve(response.data)
+    return Promise.resolve(response.data.data)
   } else {
     return Promise.reject(response.data.message)
   }

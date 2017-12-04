@@ -1,6 +1,6 @@
 var merge = require('webpack-merge')
 var prodEnv = require('./prod.env')
 
-module.exports = merge(prodEnv, {
-  NODE_ENV: '"development"'
+  module.exports = merge(prodEnv, {
+  NODE_ENV: process.argv.indexOf('mock') === 2 ? '"mock"' : '"development"'
 })

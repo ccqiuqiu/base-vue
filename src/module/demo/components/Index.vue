@@ -1,6 +1,6 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <transition enter-active-class="animated bounceInRight" leave-active-class="animated bounceOutLeft">
+  <transition enter-active-class="animated-fast fadeInRight" leave-active-class="animated-fast fadeOutLeft">
     <router-view></router-view>
   </transition>
 </template>

@@ -6,9 +6,10 @@ import conn from '../../global/conn'
 export default {
   login: data => {
     return conn.post('/public/login', {user: data})
+      .then(data => ({data})).catch(err => ({err}))
   },
   todos: data => {
     return conn.post('/todo/list', {params: data})
-    // .then(res => ({res})).catch(err => ({err}))
+      .then(data => ({data})).catch(err => ({err}))
   }
 }

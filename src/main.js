@@ -15,14 +15,15 @@ import './assets/css/theme.less'
 //   disableFocusRipple: true
 // })
 Vue.use(MuseUI)
-
-import 'flex.css'
-import './assets/css/base.less'
 import Icon from './baseComponents/Icon.vue'
 Vue.component('icon', Icon)
 
+// 样式
+import 'flex.css'
+import './assets/css/base.less'
+
+// 国际化相关
 const locale = window.localStorage.getItem('lang') || 'zh-cn' // 语言标识
-// 国际化
 import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
 const i18n = new VueI18n({
@@ -32,8 +33,15 @@ const i18n = new VueI18n({
     'en-us': require('./assets/js/i18n/en-us').default
   }
 })
+// 注册一些工具类
 import utils from '$js/utils'
 Vue.use(utils, i18n)
+
+// 当使用npm run mock 启动的时候 使用mock数据
+if (process.env.NODE_ENV === 'mock') {
+  /* eslint-disable */
+  require ('../mock')
+}
 
 Vue.config.productionTip = false
 
