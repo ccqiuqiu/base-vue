@@ -2,7 +2,6 @@
  * Created by 熊超超 on 2017/8/4.
  */
 import api from './api'
-// import {alert} from '$js/utils'
 
 export default {
   state: {
