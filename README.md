@@ -19,7 +19,8 @@ node.js > 6.10
 ```
 npm run dev    # 开发
 npm run mock-local # 开发，使用本地的mock数据
-npm run mock # 启动mock服务器
+npm run mock init # 初始化mock服务器 
+npm run mock # 启动mock服务器 
 npm run dev-mock # 开发，使用mock服务器
 npm run build  # 发布
 ```

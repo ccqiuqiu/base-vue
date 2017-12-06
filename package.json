@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "dev-mock": "node build/dev-server.js mock",
+    "mock-init": "d mock && npm i",
     "mock": "cd mock && npm run dev",
     "mock-local": "node build/dev-server.js mock local",
     "start": "node build/dev-server.js",
