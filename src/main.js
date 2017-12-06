@@ -38,9 +38,9 @@ import utils from '$js/utils'
 Vue.use(utils, i18n)
 
 // 当使用npm run mock 启动的时候 使用mock数据
-if (process.env.NODE_ENV === 'mock') {
+if (process.env.MOCK === 'local') {
   /* eslint-disable */
-  require ('../mock')
+  require ('../mock_local')
 }
 
 Vue.config.productionTip = false

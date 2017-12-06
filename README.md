@@ -17,8 +17,11 @@ node.js > 6.10
 
 # 命令
 ```
-npm run dev    #开发
-npm run build  #发布
+npm run dev    # 开发
+npm run mock-local # 开发，使用本地的mock数据
+npm run mock # 启动mock服务器
+npm run dev-mock # 开发，使用mock服务器
+npm run build  # 发布
 ```
 
 #目录结构和说明
@@ -56,7 +59,7 @@ npm run build  #发布
 支持postcss、less、sass、stylus默认使用postcss+less
 
 ## 高清适配
-- 加入使用移动端高清适配方案，默认以750px（2倍屏）设计稿为基础。如设计稿是150px，那么直接写1.5rem
+- 加入移动端高清适配方案，默认以750px（2倍屏）设计稿为基础。如设计稿是150px，那么直接写1.5rem
 - 通过postcss-pxtorem插件实现像素转rem，以兼容以px为单位的ui库(muse-ui是一倍屏适配的)
 
 ## 国际化

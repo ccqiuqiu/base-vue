@@ -7,7 +7,7 @@ import store from './store'
 
 // 创建一个axios实例
 const axiosInstance = axios.create({
-  baseURL: 'http://97.64.31.179:3000/v1',
+  baseURL: process.env.BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   },

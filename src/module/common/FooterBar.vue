@@ -38,7 +38,7 @@
 </script>
 
 <style scoped>
-  .footer-bar {
+  .footer-bar{
     padding-top: 1px;
   }
 </style>

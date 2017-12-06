@@ -4,6 +4,7 @@
     <p @click="login">先点击这里登录，下面的接口才有权限</p>
 
     <p v-for="todo in todos">{{todo.title}}</p>
+
   </div>
 </template>
 
@@ -43,7 +44,7 @@
         if (err) {
           this.$alert(err)
         } else {
-          this.todos = data
+          this.todos = data.list
         }
       }
     }

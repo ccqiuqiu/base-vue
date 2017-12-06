@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "mock": "node build/dev-server.js mock",
+    "dev-mock": "node build/dev-server.js mock",
+    "mock": "cd mock && npm run dev",
+    "mock-local": "node build/dev-server.js mock local",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
