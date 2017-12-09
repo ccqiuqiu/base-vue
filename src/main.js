@@ -43,6 +43,11 @@ if (process.env.MOCK === 'local') {
   require ('../mock_local')
 }
 
+import AirUI from 'airui-vue' // 引入组件库
+import 'airui-vue/css/index.css' // 引入样式库
+
+Vue.use(AirUI)
+
 Vue.config.productionTip = false
 
 new Vue({

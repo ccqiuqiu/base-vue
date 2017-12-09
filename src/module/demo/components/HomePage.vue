@@ -2,9 +2,8 @@
 <template>
   <div>
     <p @click="login">先点击这里登录，下面的接口才有权限</p>
-
+    <router-link to="/demo/citySelect">机场选择</router-link>
     <p v-for="todo in todos">{{todo.title}}</p>
-
   </div>
 </template>
 

@@ -3,6 +3,7 @@
  */
 const Index = () => ({component: import(/* webpackChunkName: "demo" */ '@/module/demo/components/Index')})
 const HomePage = () => ({component: import(/* webpackChunkName: "demo" */ '@/module/demo/components/HomePage')})
+const CitySelect = () => ({component: import(/* webpackChunkName: "demo" */ '@/module/demo/components/CitySelect')})
 
 export default [{
   path: '/',
@@ -13,6 +14,11 @@ export default [{
       path: '',
       name: 'demoHome',
       component: HomePage
+    },
+    {
+      path: 'citySelect',
+      name: 'citySelect',
+      component: CitySelect
     }
   ]
 }
