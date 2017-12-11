@@ -1,7 +1,7 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
-    <p @click="login">先点击这里登录，下面的接口才有权限</p>
+    <p @click="login">先点击这里登录，下面的接口才有权限{{flight.length}}</p>
     <router-link to="/demo/citySelect">机场选择</router-link>
     <p v-for="todo in todos">{{todo.title}}</p>
   </div>

@@ -13,6 +13,7 @@ export default [{
     {
       path: '',
       name: 'demoHome',
+      meta: {isHome: true},
       component: HomePage
     },
     {

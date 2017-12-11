@@ -10,6 +10,7 @@ export default [{
   children: [
     {
       path: '',
+      meta: {isHome: true},
       name: 'demo2Home',
       component: HomePage
     }

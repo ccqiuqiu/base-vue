@@ -3,12 +3,12 @@
   <div class="footer-bar" v-if="footerBar.show">
     <mu-paper>
       <mu-bottom-nav :value="footerBar.active">
-        <mu-bottom-nav-item value="/demo" to="/demo" :title="$t('菜单1')">
+        <mu-bottom-nav-item value="/demo" @click.native="click('/demo')" :title="$t('菜单1')">
           <mu-badge content="56" circle secondary>
             <icon name="home"/>
           </mu-badge>
         </mu-bottom-nav-item>
-        <mu-bottom-nav-item value="/demo2" to="/demo2" :title="$t('菜单2')">
+        <mu-bottom-nav-item value="/demo2" @click.native="click('/demo2')" :title="$t('菜单2')">
           <icon name="home"/>
         </mu-bottom-nav-item>
         <mu-bottom-nav-item value="/demo3" to="/demo3" :title="$t('菜单3')">
@@ -29,6 +29,9 @@
       return {}
     },
     methods: {
+      click (path) {
+        this.$router.push(path)
+      }
     },
     components: {},
     computed: {
