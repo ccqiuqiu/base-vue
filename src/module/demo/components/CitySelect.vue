@@ -17,7 +17,7 @@
 <script>
   import {mapState} from 'vuex'
   import mixin from '$g/mixin'
-  import airPort from 'airui-vue/res/airPort'
+  import {airPort} from 'airui-vue/res'
 
   export default {
     mixins: [mixin.updateBar],

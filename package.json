@@ -15,7 +15,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "airui-vue": "0.0.19",
+    "airui-vue": "0.0.21",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "flex.css": "^1.1.7",
