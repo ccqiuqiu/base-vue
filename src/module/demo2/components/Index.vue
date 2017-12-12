@@ -25,7 +25,7 @@
       if (module.hot) {
         module.hot.accept(['../vuex'], () => {
           this.$store.hotUpdate({
-            modules: {[this.moduleName]: vuex.default}
+            modules: {[moduleName]: vuex}
           })
         })
       }
