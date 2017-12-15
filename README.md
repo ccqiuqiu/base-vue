@@ -19,8 +19,8 @@ node.js > 6.10
 ```
 npm run dev    # 开发
 npm run mock-local # 开发，使用本地的mock数据
-npm run mock init # 初始化mock服务器 
-npm run mock # 启动mock服务器 
+npm run mock init # 初始化mock服务器,只需要执行一次
+npm run mock # 启动mock服务器
 npm run dev-mock # 开发，使用mock服务器
 npm run build  # 发布
 ```
@@ -79,8 +79,8 @@ npm run build  # 发布
 - 加入一个网络请求的实例
 
 # 其他项目
-- [base-react](https://github.com/ccqiuqiu/base-react) 一个react项目框架 
-- [base-vue](https://github.com/ccqiuqiu/base-vue) 一个vue项目框架 
+- [base-react](https://github.com/ccqiuqiu/base-react) 一个react项目框架
+- [base-vue](https://github.com/ccqiuqiu/base-vue) 一个vue项目框架
 - [base-api](https://github.com/ccqiuqiu/base-api) 一个基于koa2的后台api项目
 - [F.List](https://github.com/ccqiuqiu/F.List) 一个包含待办、备忘、密码本功能的android项目
 - [F.Money](https://github.com/ccqiuqiu/F.Money) 一个包含流水、借贷、图表统计的多账户、多用户记账的android项目
