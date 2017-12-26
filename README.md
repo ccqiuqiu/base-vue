@@ -18,11 +18,13 @@ node.js > 6.10
 # 命令
 ```
 npm run dev    # 开发
-npm run mock-local # 开发，使用本地的mock数据
+npm run dev-m # 开发，使用本地的mock数据
 npm run mock init # 初始化mock服务器,只需要执行一次
 npm run mock # 启动mock服务器
-npm run dev-mock # 开发，使用mock服务器
+npm run dev-mr # 开发，使用mock服务器 需要先启动mock服务器
 npm run build  # 发布
+npm run build-m  # 发布，使用本地的mock数据
+npm run build-mr  # 发布，使用mock服务器，需要先配置mock服务器地址
 ```
 
 #目录结构和说明
