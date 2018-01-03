@@ -14,7 +14,7 @@ const updateBar = (th) => {
   if (th.footerBar && th.footerBar.active) {
     active = th.footerBar.active
   }
-  th.$store.commit('updateFooterBar', {active: active, show: th.footerBar})
+  th.$store.commit('updateFooterBar', {active: active, show: !!th.footerBar})
 }
 export default {
   updateBar: {
@@ -28,12 +28,13 @@ export default {
   router: {
     data () {
       return {
-        exclude: []
+        exclude: [],
+        changeModule: false
       }
     },
     computed: {
       enterActiveClass () {
-        if (this.$route.meta.changeModule) {
+        if (this.$route.meta.changeModule || this.changeModule) {
           return ''
         }
         if (this.$route.meta.isBack) {
@@ -43,6 +44,9 @@ export default {
         }
       },
       leaveActiveClass () {
+        if (this.$route.meta.changeModule || this.changeModule) {
+          return ''
+        }
         if (this.$route.meta.isBack) {
           return 'animated-fast fadeOutRight'
         } else {
@@ -58,6 +62,14 @@ export default {
     beforeRouteUpdate (to, from, next) {
       to.meta.changeModule = false
       from.meta.changeModule = false
+      if (to.meta.isHome) {
+        const t = setTimeout(() => {
+          this.changeModule = true
+          clearTimeout(t)
+        }, 500)
+      } else {
+        this.changeModule = false
+      }
       next()
     }
   }
