@@ -40,10 +40,10 @@ module.exports = {
           formatter: require('eslint-friendly-formatter')
         }
       },
-      {
-        test: /muse-ui.src.*?js$/,
-        loader: 'babel-loader'
-      },
+      // {
+      //   test: /airui-vue.*?js$/,
+      //   loader: 'babel-loader'
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

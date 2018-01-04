@@ -44,9 +44,11 @@ if (process.env.MOCK === 'local') {
 }
 
 import AirUI from 'airui-vue' // 引入组件库
-import 'airui-vue/css/index.css' // 引入样式库
-
+import 'airui-vue/theme/css/index.css' // 引入样式库
 Vue.use(AirUI)
+// import AirIndexSelect from 'airui-vue/components/AirIndexSelect'
+// import 'airui-vue/theme/css/index-select.css'
+// Vue.component('AirIndexSelect', AirIndexSelect)
 
 Vue.config.productionTip = false
 

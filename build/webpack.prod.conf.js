@@ -25,8 +25,8 @@ var webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[name].[chunkhash:6].js')
   },
   plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(), // Scope Hoisting
     new webpack.HashedModuleIdsPlugin(),
-    // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
     }),
