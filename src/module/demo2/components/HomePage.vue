@@ -13,7 +13,7 @@
     mixins: [mixin.updateBar],
     data() {
       return {
-        headerBar: {title: this.$t('菜单2'), leftBtn: 'back'},
+        headerBar: this.$t('菜单2'),
         footerBar: {active: '/demo2'}
       }
     },

@@ -4,12 +4,15 @@
 
 const updateBar = (th) => {
   if (th.headerBar) {
-    let headerBar = th.headerBar
-    if (typeof headerBar === 'string') {
-      headerBar = {title: headerBar}
+    // let headerBar = th.headerBar
+    if (typeof th.headerBar === 'string') {
+      th.headerBar = {title: th.headerBar}
     }
-    th.$store.commit('updateHeaderBar', headerBar)
+  } else {
+    th.headerBar = {show: false}
   }
+  th.$store.commit('updateHeaderBar', th.headerBar)
+
   let active = th.$route.path
   if (th.footerBar && th.footerBar.active) {
     active = th.footerBar.active

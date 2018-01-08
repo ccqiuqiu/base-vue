@@ -23,7 +23,7 @@
     components: {},
     data() {
       return {
-        headerBar: {title: this.$t('菜单1'), leftBtn: 'back'},
+        headerBar: '机场选择',
         data: [airPort.filter(item => item.countrynameEN === 'CN'), airPort.filter(item => item.countrynameEN !== 'CN')],
         searchFields: ['itatCode', 'airportnameEN'],
         hots: ['WAW', 'LAX', 'GRU', 'SCL', 'TYO', 'SHA', 'CAN'],

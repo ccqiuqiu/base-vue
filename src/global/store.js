@@ -21,8 +21,8 @@ const state = {
 
 const getters = {}
 const mutations = {
-  updateHeaderBar (state, {title, leftBtn = 'back', rightBtn = null}) {
-    state.headerBar = {title, leftBtn, rightBtn}
+  updateHeaderBar (state, {title, leftBtn = 'back', rightBtn = null, show = true}) {
+    state.headerBar = {title, leftBtn, rightBtn, show}
   },
   updateFooterBar (state, {active = '/', show = false}) {
     state.footerBar = {active, show}

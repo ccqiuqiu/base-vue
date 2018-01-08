@@ -4,15 +4,15 @@
     <div flex-box="0">
       <header-bar></header-bar>
     </div>
-    <div :class="['content-view', footerBar.show ? '' : 'no-footer']" flex-box="1" flex="dir:top">
+    <div :class="['content-view']" flex-box="1" flex="dir:top">
         <router-view></router-view>
-      <loading></loading>
-      <mu-toast v-if="toast" :message="toast.message"/>
-      <my-dialog></my-dialog>
     </div>
     <div flex-box="0">
       <footer-bar></footer-bar>
     </div>
+    <loading></loading>
+    <mu-toast v-if="toast" :message="toast.message"/>
+    <my-dialog></my-dialog>
   </div>
 </template>
 
@@ -29,7 +29,7 @@
     },
     components: { HeaderBar, FooterBar, Loading, MyDialog },
     computed: {
-      ...mapState(['toast', 'footerBar'])
+      ...mapState(['toast'])
     },
     methods: {}
   }

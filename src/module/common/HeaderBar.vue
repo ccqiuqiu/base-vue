@@ -1,6 +1,6 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <div>
+  <div  v-if="headerBar.show">
     <mu-appbar :title="headerBar.title">
       <template slot="left">
         <mu-icon-button :key="btn.icon" v-for="btn in leftBtn"  @click="btn.handle">
