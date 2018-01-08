@@ -5,6 +5,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './global/router'
 import store from './global/store'
+import './assets/js/iconfont'
 // MuseUI库
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
