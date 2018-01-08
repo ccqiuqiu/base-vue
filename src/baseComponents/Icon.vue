@@ -13,7 +13,7 @@
         required: true
       },
       size: {
-        type: String,
+        type: Number,
         default: 56
       },
       className: String,
