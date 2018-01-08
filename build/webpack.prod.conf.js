@@ -34,7 +34,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       beautify: false,      // 最紧凑的输出
       comments: false,      // 删除所有的注释
       compress: {
-        warnings: false,   //不输出警告
+        warnings: false,   // 不输出警告
         drop_console: true // 删除所有的 `console` 语句
       },
       sourceMap: false

@@ -4,14 +4,14 @@
 // mock的写法参照 http://mockjs.com
 import Mock from 'mockjs'
 
-Mock.mock(/\/v1\/public\/login/, {
+Mock.mock(/\/login/, {
   success: true,
   data: {
     user: {id: 7}
   }
 })
 
-Mock.mock(/\/v1\/public\/test/, {
+Mock.mock(/\/todo\/list/, {
   success: true,
   data: {
     'list|1-10': [{

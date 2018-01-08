@@ -7,13 +7,9 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "dev-m": "node build/dev-server.js mock",
-    "dev-mr": "node build/dev-server.js mock-r",
-    "mock-init": "cd mock && npm i",
-    "mock": "cd mock && npm run dev",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "build-m": "node build/build.js mock",
-    "build-mr": "node build/build.js mock-r",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {

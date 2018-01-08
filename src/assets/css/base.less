@@ -38,15 +38,17 @@ html, body, #app {
 }
 .content-view {
   position: relative;
-  background-color: @grey50;
+  //background-color: @grey50;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   >div{
     background-color: @white;
-    // height: ~'calc(100vh - 2rem)';
-    height: 100%;
+    min-height: ~"calc(100% + 1px)"; // 解决iOS上有时候不能滚动的问题
     width: 100%;
     position: absolute;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+  }
+  > #loading{
+    background-color: transparent;
   }
   &.no-footer > div{
     // height: ~'calc(100vh - 1rem)';

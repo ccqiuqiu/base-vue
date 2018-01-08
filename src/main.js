@@ -38,9 +38,9 @@ import utils from '$js/utils'
 Vue.use(utils, i18n)
 
 // 当使用npm run mock 启动的时候 使用mock数据
-if (process.env.MOCK === 'local') {
+if (process.env.MOCK) {
   /* eslint-disable */
-  require ('../mock_local')
+  require ('../mock')
 }
 
 import AirUI from 'airui-vue' // 引入组件库
