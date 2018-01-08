@@ -19,12 +19,8 @@ node.js > 6.10
 ```
 npm run dev    # 开发
 npm run dev-m # 开发，使用本地的mock数据
-npm run mock init # 初始化mock服务器,只需要执行一次
-npm run mock # 启动mock服务器
-npm run dev-mr # 开发，使用mock服务器 需要先启动mock服务器
 npm run build  # 发布
 npm run build-m  # 发布，使用本地的mock数据
-npm run build-mr  # 发布，使用mock服务器，需要先配置mock服务器地址
 ```
 
 #目录结构和说明
@@ -76,6 +72,7 @@ npm run build-mr  # 发布，使用mock服务器，需要先配置mock服务器�
 - 通过mixins封装页头标题，操作按钮和页面底部菜单的变化
 - 将公用的参数、方法绑定到Vue实例，所有组件都能方便的使用
 - 有些看起来意义好像不大的代码都是为后期扩展做准备
+- 支持mock数据，方便开发
 
 ## todo
 - 加入一个网络请求的实例

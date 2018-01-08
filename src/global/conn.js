@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use(response => {
   if (response.data.success) {
     return Promise.resolve(response.data.data)
   } else {
-    return Promise.reject(response.data.message)
+    return Promise.reject(response.data.message || '请求失败')
   }
 }, err => {
   store.commit('hideLoading')
