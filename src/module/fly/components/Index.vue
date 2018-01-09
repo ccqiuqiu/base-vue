@@ -15,7 +15,7 @@
   export default {
     mixins: [mixin.router],
     created () {
-      const moduleName = 'demo2'
+      const moduleName = 'fly'
       // 如果modulesMap里面没有此模块名，说明是第一次加载，那么注册vuex的模块
       if (!modulesMap[moduleName]) {
         modulesMap[moduleName] = true

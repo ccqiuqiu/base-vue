@@ -4,13 +4,13 @@
     <mu-appbar :title="headerBar.title">
       <template slot="left">
         <mu-icon-button :key="btn.icon" v-for="btn in leftBtn"  @click="btn.handle">
-          <icon :name="btn.icon"/>
+          <Icon :name="btn.icon"/>
         </mu-icon-button>
       </template>
 
       <template slot="right">
         <mu-icon-button :key="btn.icon" v-for="btn in rightBtn"  @click="btn.handle">
-          <icon :name="btn.icon"/>
+          <Icon :name="btn.icon"/>
         </mu-icon-button>
       </template>
     </mu-appbar>

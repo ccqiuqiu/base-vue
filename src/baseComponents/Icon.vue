@@ -1,7 +1,9 @@
 <template>
-  <svg :class="['icon', className, 'f-'+size]" :style="{color: color}" aria-hidden="true">
-    <use :xlink:href="'#icon-' + name"></use>
-  </svg>
+  <span :class="[className, 'f-' + size]" :style="{color: color}">
+    <svg class="icon" aria-hidden="true">
+      <use :xlink:href="'#icon-' + name"></use>
+    </svg>
+  </span>
 </template>
 
 <script>
@@ -13,8 +15,8 @@
         required: true
       },
       size: {
-        type: Number,
-        default: 56
+        type: [Number, String],
+        default: 48
       },
       className: String,
       color: String

@@ -5,16 +5,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import common from '../module/common/router'
-import demo from '../module/demo/router'
-import demo2 from '../module/demo2/router'
+import book from '../module/book/router'
+import fly from '../module/fly/router'
+import message from '../module/message/router'
+import my from '../module/my/router'
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [
     ...common,
-    ...demo,
-    ...demo2,
+    ...book,
+    ...fly,
+    ...message,
+    ...my,
     {
       path: '*',
       redirect: '/'

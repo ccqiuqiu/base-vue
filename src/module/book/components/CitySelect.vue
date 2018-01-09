@@ -26,7 +26,7 @@
         headerBar: '机场选择',
         data: [airPort.filter(item => item.countrynameEN === 'CN'), airPort.filter(item => item.countrynameEN !== 'CN')],
         searchFields: ['itatCode', 'airportnameEN'],
-        hots: ['WAW', 'LAX', 'GRU', 'SCL', 'TYO', 'SHA', 'CAN'],
+        hots: ['PEK', 'WAW', 'LAX', 'GRU', 'SCL', 'TYO', 'SHA', 'CAN'],
         tabs: ['国内', '国际']
       }
     },
@@ -35,7 +35,8 @@
     },
     methods: {
       selected (airPort) {
-        this.$alert(airPort.airportnameCN)
+        this.$store.commit('updateAirPort', {airPort, flg: this.$route.query.flg})
+        this.$router.back()
       }
     }
   }

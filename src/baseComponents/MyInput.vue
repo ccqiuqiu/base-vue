@@ -4,7 +4,7 @@
     <mu-text-field v-if="inputType === 'text'" v-bind="$attrs" v-model="mValue" :class='{fullWidth: fullWidth}'></mu-text-field>
     <mu-date-picker v-if="inputType === 'date'" v-bind="$attrs" v-model="mValue" :class='{fullWidth: fullWidth}'/>
     <div class="right">
-      <icon :name="icon"/>
+      <Icon :name="icon"/>
     </div>
   </div>
 </template>

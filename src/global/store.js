@@ -9,7 +9,7 @@ Vue.use(Vuex)
 const state = {
   headerBar: {},
   footerBar: {
-    active: '/demo'
+    active: '/book'
   },
   loading: {
     show: false,
@@ -24,7 +24,7 @@ const mutations = {
   updateHeaderBar (state, {title, leftBtn = 'back', rightBtn = null, show = true}) {
     state.headerBar = {title, leftBtn, rightBtn, show}
   },
-  updateFooterBar (state, {active = '/', show = false}) {
+  updateFooterBar (state, {active = '/book', show = false}) {
     state.footerBar = {active, show}
   },
   showLoading (state, text = '加载中...') {

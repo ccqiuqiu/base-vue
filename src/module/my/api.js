@@ -7,9 +7,5 @@ export default {
   login: data => {
     return conn.post('/login', {user: data})
       .then(data => ({data})).catch(err => ({err}))
-  },
-  todos: data => {
-    return conn.post('/todo/list', {params: data})
-      .then(data => ({data})).catch(err => ({err}))
   }
 }
