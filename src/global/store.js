@@ -7,11 +7,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+  isBack: false,
+  isHome: false,
   headerBar: {},
   footerBar: {
     active: '/book'
   },
   loading: {
+    count: 0,
     show: false,
     text: ''
   },
@@ -21,6 +24,12 @@ const state = {
 
 const getters = {}
 const mutations = {
+  changeIsBack (state, val) {
+    state.isBack = val
+  },
+  changeIsHome (state, val) {
+    state.isHome = val
+  },
   updateHeaderBar (state, {title, leftBtn = 'back', rightBtn = null, show = true}) {
     state.headerBar = {title, leftBtn, rightBtn, show}
   },
@@ -28,12 +37,13 @@ const mutations = {
     state.footerBar = {active, show}
   },
   showLoading (state, text = '加载中...') {
-    state.loading.show = true
-    state.loading.text = text
+    state.loading = {
+      count: state.loading.count + 1,
+      text
+    }
   },
   hideLoading (state) {
-    state.loading.show = false
-    state.loading.text = ''
+    state.loading.count = Math.max(state.loading.count - 1, 0)
   },
   toast(state, {message}) {
     state.toast = {message}

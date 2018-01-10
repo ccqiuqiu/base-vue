@@ -1,5 +1,5 @@
 <template>
-  <div id="loading" class="f-28 o-h" flex="dir:top main:center cross:center" v-show="loading.show" @scroll.prevent="">
+  <div id="loading" class="f-28 o-h" flex="dir:top main:center cross:center" v-show="loading.count > 0" @scroll.prevent="">
     <div class="loading-box">
       <div class="content p-v-24 p-h-40 a-c o-h" v-html="loading.text"></div>
     </div>
@@ -16,8 +16,11 @@
     },
     watch: {
       loading () {
-        if (this.loading.show === false) document.body.style.overflow = 'auto'
-        else document.body.style.overflow = 'hidden'
+        if (this.loading.count <= 0) {
+          document.body.style.overflow = 'auto'
+        } else {
+          document.body.style.overflow = 'hidden'
+        }
       }
     }
   }

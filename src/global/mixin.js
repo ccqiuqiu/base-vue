@@ -1,7 +1,10 @@
 /**
  * Created by 熊超超 on 2017/8/4.
  */
+import {mapState} from 'vuex'
+import store from './store'
 
+// 修改headerBar和footerBar的方法
 const updateBar = (th) => {
   if (th.headerBar) {
     // let headerBar = th.headerBar
@@ -19,61 +22,62 @@ const updateBar = (th) => {
   }
   th.$store.commit('updateFooterBar', {active: active, show: !!th.footerBar})
 }
+
 export default {
+  // 修改headerBar和footerBar的mixin
+  // 在组件created和activated的时候都要更新
   updateBar: {
     created () {
+      // 把sBack和IsHome设为默认值。
+      store.commit('changeIsBack', false)
+      store.commit('changeIsHome', false)
       updateBar(this)
     },
     activated () {
+      // 把sBack和IsHome设为默认值
+      store.commit('changeIsBack', false)
+      store.commit('changeIsHome', false)
       updateBar(this)
     }
   },
+  // 更新路由动画的mixin
   router: {
     data () {
       return {
-        exclude: [],
-        changeModule: false
+        exclude: [] // 这里存不缓存的组件的name
       }
     },
+    created () {
+      // 组件创建后隐藏loading框
+      console.log(2222222)
+      store.commit('hideLoading')
+    },
     computed: {
+      ...mapState(['isBack', 'isHome']),
       enterActiveClass () {
-        if (this.$route.meta.changeModule || this.changeModule) {
-          return ''
+        // 切换到模块首页的时候的进入动画
+        if (this.isHome) {
+          return 'animated pulse'
         }
-        if (this.$route.meta.isBack) {
+        // 后退和前进的动画方向相反
+        if (this.isBack) {
           return 'animated-fast fadeInLeft'
         } else {
           return 'animated-fast fadeInRight'
         }
       },
       leaveActiveClass () {
-        if (this.$route.meta.changeModule || this.changeModule) {
+        // 切换到模块首页的时候的不要离开动画
+        if (this.isHome) {
           return ''
         }
-        if (this.$route.meta.isBack) {
+        // 后退和前进的动画方向相反
+        if (this.isBack) {
           return 'animated-fast fadeOutRight'
         } else {
           return 'animated-fast fadeOutLeft'
         }
       }
-    },
-    beforeRouteEnter (to, from, next) {
-      to.meta.changeModule = true
-      from.meta.changeModule = true
-      next()
-    },
-    beforeRouteUpdate (to, from, next) {
-      to.meta.changeModule = false
-      from.meta.changeModule = false
-      if (to.meta.isHome) {
-        const t = setTimeout(() => {
-          this.changeModule = true
-          clearTimeout(t)
-        }, 500)
-      } else {
-        this.changeModule = false
-      }
-      next()
     }
   }
 }

@@ -30,7 +30,7 @@
     },
     methods: {
       click (path) {
-        this.$router.push(path)
+        this.$r.push(path)
       }
     },
     components: {},

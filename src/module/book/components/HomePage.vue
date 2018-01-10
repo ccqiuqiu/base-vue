@@ -47,13 +47,13 @@
     },
     methods: {
       selectAirPort (flg) {
-        this.$router.push({path: '/common/citySelect', query: {flg: flg}})
+        this.$r.push({path: '/common/citySelect', query: {flg: flg}})
       },
       changeAirPort () {
         this.$store.commit('changeAirPort')
       },
       search () {
-        this.$router.push('flightList')
+        this.$r.push('flightList')
       }
     }
   }

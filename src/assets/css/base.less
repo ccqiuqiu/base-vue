@@ -41,19 +41,21 @@ html, body, #app {
   overflow: hidden;
 }
 
-//.v-leave-to {
-//  z-index: -1;
-//}
 .content-view {
   position: relative;
   //background-color: @grey50;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   >div{
+    z-index: 2;
     background-color: @white;
     min-height: ~"calc(100% + 1px)"; // 解决iOS上有时候不能滚动的问题
     width: 100%;
     position: absolute;
+
+    &.v-leave-to {
+      z-index: 1;
+    }
   }
   > #loading{
     background-color: transparent;

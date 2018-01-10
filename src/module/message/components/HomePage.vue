@@ -2,7 +2,7 @@
 <template>
   <mu-list class="list">
     <mu-sub-header>系统消息</mu-sub-header>
-    <mu-list-item :title="message.title" v-for="message in list" :key="message.id" class="b-b" @click="$router.push('detail')">
+    <mu-list-item :title="message.title" v-for="message in list" :key="message.id" class="b-b" @click="$r.push('/message/detail')">
       <Icon :name="message.img" size="100" slot="leftAvatar"/>
       <div slot="describe">
         <div>{{message.describe}}</div>

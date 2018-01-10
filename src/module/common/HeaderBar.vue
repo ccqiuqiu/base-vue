@@ -31,12 +31,12 @@
           if (obj === 'back') {
             re.push({
               icon: obj,
-              handle: () => this.$router.back()
+              handle: () => this.$r.back()
             })
           } else if (obj === 'home') {
             re.push({
               icon: obj,
-              handle: () => this.$router.push('/')
+              handle: () => this.$r.push('/')
             })
           } else if (obj === 'more') {
             re.push({

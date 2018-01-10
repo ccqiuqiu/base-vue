@@ -3,6 +3,7 @@
  */
 import moment from 'moment'
 import store from '$g/store'
+import routerUtils from '$g/routerUtils'
 
 let locale = null
 let i18n = null
@@ -33,6 +34,7 @@ export default {
     Vue.prototype.$alert = alert
     Vue.prototype.$dialog = dialog
     Vue.prototype.$isArray = isArray
+    Vue.prototype.$r = routerUtils
     // 混入
     Vue.mixin({
       filters: {}

@@ -36,7 +36,7 @@
     methods: {
       selected (airPort) {
         this.$store.commit('updateAirPort', {airPort, flg: this.$route.query.flg})
-        this.$router.back()
+        this.$r.back()
       }
     }
   }
