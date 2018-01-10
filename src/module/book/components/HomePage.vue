@@ -6,15 +6,17 @@
         <div flex="cross:center box:last">
           <div>
             <div flex="cross:center box:first" class="m-b-30">
-              <span class="f-24 m-l-30 m-r-70">从</span>
-              <span class="f-30 b-b p-h-16" @click="selectAirPort('org')">{{orgAirPort.citynameCN}}</span>
+              <span class="m-l-30 m-r-70">从</span>
+              <span class="f-42 b-b p-h-16" @click="selectAirPort('org')">{{orgAirPort.citynameCN}}</span>
             </div>
             <div flex="cross:center box:first">
-              <span class="f-24 m-l-30 m-r-70">到</span>
-              <span class="f-30 b-b p-h-16" @click="selectAirPort('dst')">{{dstAirPort.citynameCN}}</span>
+              <span class="m-l-30 m-r-70">到</span>
+              <span class="f-42 b-b p-h-16" @click="selectAirPort('dst')">{{dstAirPort.citynameCN}}</span>
             </div>
           </div>
-          <Icon @click.native="changeAirPort" name="change" size="50" class="m-l-10" />
+          <span>
+            <Icon @click.native="changeAirPort" name="change" size="50" class="m-l-10" />
+          </span>
         </div>
       </mu-card-text>
     </mu-card>
@@ -45,13 +47,13 @@
     },
     methods: {
       selectAirPort (flg) {
-        this.$router.push({path: 'citySelect', query: {flg}})
+        this.$router.push({path: '/common/citySelect', query: {flg: flg}})
       },
       changeAirPort () {
         this.$store.commit('changeAirPort')
       },
       search () {
-        this.$router.push('search')
+        this.$router.push('flightList')
       }
     }
   }

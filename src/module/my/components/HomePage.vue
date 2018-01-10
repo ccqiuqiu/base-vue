@@ -65,7 +65,7 @@
     mixins: [mixin.updateBar],
     data() {
       return {
-        headerBar: {title: this.$t('我的'), rightBtn: 'more'},
+        headerBar: {title: this.$t('我的'), leftBtn: null, rightBtn: 'more'},
         footerBar: {active: '/my'},
         push: true,
         sound: false,

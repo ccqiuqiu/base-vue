@@ -10,12 +10,7 @@
     width: auto;
     height: auto;
   }
-  .mu-bottom-item-active .mu-bottom-item-text{
-    font-size: 0.24rem;
-  }
-  .mu-flat-button .icon, .mu-raised-button .icon{
-    margin-left: 10px;
-  }
+
   .mu-list{
     padding: 0;
     margin: 12px 0;
@@ -52,25 +47,35 @@
 
     .mu-buttom-item{
       max-width: none;
+      padding-top: 2px;
 
       .mu-buttom-item-wrapper{
-        line-height: 0.2rem;
+        line-height: 18/@rem;
 
         .mu-badge{
-          font-size: 0.2rem;
+          font-size: 18/@rem;
         }
         .mu-badge-circle{
-          width: 0.3rem;
-          height:0.3rem;
+          width: 30/@rem;
+          height: 30/@rem;
         }
         .mu-badge-float{
-          top: -0.08rem;
+          top: -0.04rem;
           right: -0.16rem;
         }
       }
     }
     .mu-bottom-item-active svg{
       color: @primaryColor;
+    }
+    .mu-bottom-item-text{
+      font-size: 20/@rem;
+    }
+    .mu-bottom-item-active .mu-bottom-item-text{
+      font-size: 22/@rem;
+    }
+    .mu-flat-button .icon, .mu-raised-button .icon{
+      margin-left: 10px;
     }
   }
   // 白色背景的tabs样式

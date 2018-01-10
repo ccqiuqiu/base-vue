@@ -27,7 +27,7 @@
     mixins: [mixin.updateBar],
     data() {
       return {
-        headerBar: this.$t('飞行'),
+        headerBar: {title: this.$t('飞行'), leftBtn: null},
         footerBar: {active: '/fly'},
         list: []
       }

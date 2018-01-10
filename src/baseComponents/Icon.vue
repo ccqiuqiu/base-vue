@@ -1,9 +1,9 @@
 <template>
-  <span :class="[className, 'f-' + size]" :style="{color: color}">
-    <svg class="icon" aria-hidden="true">
+
+    <svg :class="['icon', className, 'f-' + size]" :style="{color: color}" aria-hidden="true">
       <use :xlink:href="'#icon-' + name"></use>
     </svg>
-  </span>
+
 </template>
 
 <script>

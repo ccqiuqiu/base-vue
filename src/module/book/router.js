@@ -3,7 +3,7 @@
  */
 const Index = () => ({component: import(/* webpackChunkName: "book" */ './components/Index')})
 const HomePage = () => ({component: import(/* webpackChunkName: "book" */ './components/HomePage')})
-const CitySelect = () => ({component: import(/* webpackChunkName: "book" */ './components/CitySelect')})
+const FlightList = () => ({component: import(/* webpackChunkName: "book" */ './components/FlightList')})
 
 export default [{
   path: '/',
@@ -16,9 +16,8 @@ export default [{
       component: HomePage
     },
     {
-      path: 'citySelect',
-      component: CitySelect
+      path: 'flightList',
+      component: FlightList
     }
   ]
-}
-]
+}]
