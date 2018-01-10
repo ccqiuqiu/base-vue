@@ -7,8 +7,8 @@ const HomePage = () => ({component: import(/* webpackChunkName: "book" */ './com
 const FlightList = () => ({component: import(/* webpackChunkName: "book" */ './components/FlightList')})
 
 export default [{
-  path: '/',
-  alias: '/book',
+  path: '/book',
+  alias: '/',
   component: Index,
   children: [
     {
@@ -17,7 +17,7 @@ export default [{
       component: HomePage
     },
     {
-      path: 'flightList',
+      path: '/book/flightList',
       component: FlightList
     }
   ]

@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   isBack: false,
-  isHome: false,
+  isHome: true,
   headerBar: {},
   footerBar: {
     active: '/book'

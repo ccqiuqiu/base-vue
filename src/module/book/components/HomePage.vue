@@ -53,7 +53,7 @@
         this.$store.commit('changeAirPort')
       },
       search () {
-        this.$r.push('flightList')
+        this.$r.push('/book/flightList')
       }
     }
   }

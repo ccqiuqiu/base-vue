@@ -27,7 +27,8 @@ export default {
 router.beforeEach((to, from, next) => {
   const moduleName = to.path.split('/')[1]
   // 在首次加载模块的时候显示loading
-  if (!modulesMap[moduleName] && moduleName !== '' && moduleName !== 'book') {
+  const list = ['common'] // 忽略的模块，因为这些模块不是异步加载的
+  if (!modulesMap[moduleName] && !list.includes(moduleName)) {
     store.commit('showLoading')
   }
   // 切换到和当前模块不同的模块首页的时候，如果不是后退，那么把sHome设置为true，路由的动画就是切换到首页的动画
