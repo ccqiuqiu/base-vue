@@ -16,6 +16,7 @@ import './assets/css/theme.less'
 //   disableFocusRipple: true
 // })
 Vue.use(MuseUI)
+
 import Icon from './baseComponents/Icon.vue'
 Vue.component('Icon', Icon)
 
@@ -47,9 +48,6 @@ if (process.env.MOCK) {
 import AirUI from 'airui-vue' // 引入组件库
 import 'airui-vue/theme/css/index.css' // 引入样式库
 Vue.use(AirUI)
-// import AirIndexSelect from 'airui-vue/components/AirIndexSelect'
-// import 'airui-vue/theme/css/index-select.css'
-// Vue.component('AirIndexSelect', AirIndexSelect)
 
 Vue.config.productionTip = false
 

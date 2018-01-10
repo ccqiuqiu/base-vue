@@ -9,13 +9,6 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
-const museUiThemePath = path.join(
-  __dirname,
-  'node_modules',
-  'muse-ui',
-  'src/styles/themes/variables/default.less'
-)
-
 exports.cssLoaders = function (options) {
   options = options || {}
 
@@ -30,7 +23,7 @@ exports.cssLoaders = function (options) {
   function generateLoaders (loader, loaderOptions) {
     var loaders = [cssLoader]
     // generate loader string to be used with extract text plugin
-    loaders.push({ loader: 'postcss-loader', options: {sourceMap: true}});
+    loaders.push({loader: 'postcss-loader', options: {sourceMap: true}})
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
@@ -54,7 +47,7 @@ exports.cssLoaders = function (options) {
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
-    // postcss: generateLoaders(),
+    postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
