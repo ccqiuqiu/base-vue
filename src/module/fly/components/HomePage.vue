@@ -40,10 +40,8 @@
     },
     methods: {
       async getFly () {
-        const {err, data} = await this.$store.dispatch('getFly')
-        if (err) {
-          this.$alert(err)
-        } else {
+        const data = await this.$store.dispatch('getFly')
+        if (data) {
           this.list = data.list
         }
       }

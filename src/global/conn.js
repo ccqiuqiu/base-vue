@@ -29,11 +29,11 @@ axiosInstance.interceptors.response.use(response => {
   if (response.data.success) {
     return Promise.resolve(response.data.data)
   } else {
-    return Promise.reject(response.data || '请求失败')
+    return Promise.reject(response.data.error || {message: '服务器异常'})
   }
 }, err => {
   store.commit('hideLoading')
-  return Promise.reject(err.message)
+  return Promise.reject(err)
 })
 
 export default axiosInstance

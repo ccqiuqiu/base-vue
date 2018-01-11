@@ -19,8 +19,10 @@ Mock.mock('/login', option => {
   } else {
     return {
       success: false,
-      code: 402,
-      message: '用户名密码不匹配'
+      error: {
+        code: 402,
+        message: '用户名密码不匹配'
+      }
     }
   }
 })

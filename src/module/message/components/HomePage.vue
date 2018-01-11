@@ -57,7 +57,7 @@
       async getMessage () {
         const {err, data} = await this.$store.dispatch('getMessage')
         if (err) {
-          this.$alert(err)
+          this.$alert(err.message)
         } else {
           this.list = data.list
         }
