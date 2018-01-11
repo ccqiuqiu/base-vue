@@ -8,8 +8,8 @@ export default {
   state: {},
   mutations: {},
   actions: {
-    async getMessage ({state, commit, rootState}, params) {
-      return await api.getMessage()
+    getMessage ({state, commit, rootState}, params) {
+      return api.getMessage()
     }
   },
   getters: {}

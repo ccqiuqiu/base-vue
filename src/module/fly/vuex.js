@@ -8,8 +8,8 @@ export default {
   state: {},
   mutations: {},
   actions: {
-    async getFly ({state, commit, rootState}, params) {
-      return await api.getFly()
+    getFly ({state, commit, rootState}, params) {
+      return api.getFly()
     }
   },
   getters: {}
