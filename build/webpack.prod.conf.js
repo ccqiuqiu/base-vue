@@ -1,13 +1,14 @@
-var path = require('path')
-var utils = require('./utils')
-var webpack = require('webpack')
-var config = require('../config')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const path = require('path')
+const utils = require('./utils')
+const webpack = require('webpack')
+const config = require('../config')
+const merge = require('webpack-merge')
+const baseWebpackConfig = require('./webpack.base.conf')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 var env = config.build.env
 
@@ -30,14 +31,17 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,      // 最紧凑的输出
-      comments: false,      // 删除所有的注释
-      compress: {
-        warnings: false,   // 不输出警告
-        drop_console: true // 删除所有的 `console` 语句
-      },
-      sourceMap: false
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false,  // 删除所有的注释
+          beautify: false  // 最紧凑的输出
+        },
+        compress: {
+          warnings: false,   // 不输出警告
+          drop_console: true // 删除所有的 `console` 语句
+        }
+      }
     }),
     // extract css into its own file
     new ExtractTextPlugin({

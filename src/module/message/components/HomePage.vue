@@ -27,7 +27,7 @@
       </transition-group>
     </mu-list>
     <mu-float-button class="fba" secondary mini @click="add()" >
-        <Icon name="home" />
+        <Icon name="add" />
     </mu-float-button>
   </div>
 </template>
@@ -88,6 +88,11 @@
   .list-complete-leave-active {
     position: absolute;
   }
+  /*.list-complete-enter, .list-complete-leave-to*/
+    /*!* .list-complete-leave-active for below version 2.1.8 *! {*/
+    /*opacity: 0;*/
+    /*transform: translateY(30px);*/
+  /*}*/
   .fba{
     position: fixed;
     right: 16px;
