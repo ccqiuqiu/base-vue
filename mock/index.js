@@ -48,7 +48,7 @@ Mock.mock('/fly/list', {
 Mock.mock('/message/list', {
   success: true,
   data: {
-    'list|1-10': [{
+    'list|10-20': [{
       'id|+1': 1,
       'title': '@ctitle(5, 20)',
       'describe': '@cparagraph()',

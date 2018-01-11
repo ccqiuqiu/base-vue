@@ -49,7 +49,6 @@ export default {
     },
     created () {
       // 组件创建后隐藏loading框
-      console.log(2222222)
       store.commit('hideLoading')
     },
     computed: {
@@ -57,7 +56,7 @@ export default {
       enterActiveClass () {
         // 切换到模块首页的时候的进入动画
         if (this.isHome) {
-          return 'animated pulse'
+          return '' // pulse
         }
         // 后退和前进的动画方向相反
         if (this.isBack) {

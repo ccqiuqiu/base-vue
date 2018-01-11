@@ -33,7 +33,7 @@ axiosInstance.interceptors.response.use(response => {
   }
 }, err => {
   store.commit('hideLoading')
-  return Promise.reject(err)
+  return Promise.reject(err.message)
 })
 
 export default axiosInstance

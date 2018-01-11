@@ -1,21 +1,35 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <mu-list class="list">
-    <mu-sub-header>系统消息</mu-sub-header>
-    <mu-list-item :title="message.title" v-for="message in list" :key="message.id" class="b-b" @click="$r.push('/message/detail')">
-      <Icon :name="message.img" size="100" slot="leftAvatar"/>
-      <div slot="describe">
-        <div>{{message.describe}}</div>
-        <div>{{message.time}}</div>
-      </div>
-      <mu-icon-menu slot="right" tooltip="操作" icon="">
-        <Icon slot="icon" name="more" size="36" />
-        <mu-menu-item title="回复" />
-        <mu-menu-item title="标记" />
-        <mu-menu-item title="删除" />
-      </mu-icon-menu>
-    </mu-list-item>
-  </mu-list>
+  <div>
+    <mu-list class="list">
+      <mu-sub-header>系统消息</mu-sub-header>
+      <transition-group
+        enter-to-class="animated fadeInLeft"
+        enter-class="animated fadeInLeft"
+        enter-active-class="list-complete-leave-active"
+        leave-active-class="list-complete-leave-active"
+        leave-to-class="animated fadeOutLeft"
+        move-class="list-complete-item">
+        <!--<transition-group name="list-complete">-->
+        <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b">
+          <Icon :name="message.img" size="100" slot="leftAvatar"/>
+          <div slot="describe" @click="$r.push('/message/detail')">
+            <div>{{message.describe}}</div>
+            <div>{{message.time}}</div>
+          </div>
+          <mu-icon-menu slot="right" tooltip="操作" icon="">
+            <Icon slot="icon" name="more" size="36" />
+            <mu-menu-item title="回复" />
+            <mu-menu-item title="标记" />
+            <mu-menu-item @click="del(index)" title="删除" />
+          </mu-icon-menu>
+        </mu-list-item>
+      </transition-group>
+    </mu-list>
+    <mu-float-button class="fba" secondary mini @click="add()" >
+        <Icon name="home" />
+    </mu-float-button>
+  </div>
 </template>
 
 <script>
@@ -47,6 +61,16 @@
         } else {
           this.list = data.list
         }
+      },
+      del (index) {
+        this.list.splice(index, 1)
+      },
+      add () {
+        const message = this.list[0]
+        const newMsg = {...message}
+        newMsg.title = newMsg.title + '1'
+        newMsg.id = newMsg.id + Math.random()
+        this.list.unshift(newMsg)
       }
     }
   }
@@ -57,6 +81,16 @@
     max-height: initial !important;
     display: block;
   }
-  .list /deep/ .mu-item.show-right{
+
+  .list-complete-item {
+    transition: all 0.5s;
+  }
+  .list-complete-leave-active {
+    position: absolute;
+  }
+  .fba{
+    position: fixed;
+    right: 16px;
+    bottom: ~"calc(1rem + 16px)";
   }
 </style>
