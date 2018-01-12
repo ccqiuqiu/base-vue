@@ -11,7 +11,7 @@
         leave-to-class="animated fadeOutLeft"
         move-class="list-complete-item">
         <!--<transition-group name="list-complete">-->
-        <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b">
+        <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
           <Icon :name="message.img" size="100" slot="leftAvatar"/>
           <div slot="describe" @click="$r.push('/message/detail')">
             <div>{{message.describe}}</div>
@@ -88,11 +88,11 @@
   .list-complete-leave-active {
     position: absolute;
   }
-  /*.list-complete-enter, .list-complete-leave-to*/
-    /*!* .list-complete-leave-active for below version 2.1.8 *! {*/
-    /*opacity: 0;*/
-    /*transform: translateY(30px);*/
-  /*}*/
+  .list-complete-enter, .list-complete-leave-to
+    /* .list-complete-leave-active for below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
   .fba{
     position: fixed;
     right: 16px;

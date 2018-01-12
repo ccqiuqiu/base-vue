@@ -42,7 +42,7 @@ Mock.mock('/fly/list', {
       'flyNo': '@string("upper", 2)@integer(100, 9999)',
       'price': '@integer(100, 99999)',
       'plane': '@character("upper")@integer(100, 9999)',
-      'cabin': '@pick(["C", "D", "Z", "I", "R", "J", "Y", "B", "H", "K", "L", "M", "Q", "X", "U", "E", "T", "N", "T1", "N1", "T2", "N2", "W", "A", "P", "V", "G", "O", "S"])'
+      'cabin|1': ['C', 'D', 'Z', 'I', 'R', 'J', 'Y', 'B', 'H', 'K', 'L', 'M', 'Q', 'X', 'U', 'E', 'T', 'N', 'T1', 'N1', 'T2', 'N2', 'W', 'A', 'P', 'V', 'G', 'O', 'S']
     }]
   }
 })
@@ -55,7 +55,7 @@ Mock.mock('/message/list', {
       'title': '@ctitle(5, 20)',
       'describe': '@cparagraph()',
       'time': '@datetime',
-      'img': '@pick(["girl", "boy"])'
+      'img|1': ['girl', 'boy']
     }]
   }
 })
