@@ -12,13 +12,13 @@
         move-class="list-complete-item">
         <!--<transition-group name="list-complete">-->
         <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
-          <Icon :name="message.img" size="100" slot="leftAvatar"/>
+          <cc-icon :name="message.img" size="100" slot="leftAvatar"/>
           <div slot="describe" @click="$r.push('/message/detail')">
             <div>{{message.describe}}</div>
             <div>{{message.time}}</div>
           </div>
           <mu-icon-menu slot="right" tooltip="操作" icon="">
-            <Icon slot="icon" name="more" size="36" />
+            <cc-icon slot="icon" name="more" size="36" />
             <mu-menu-item title="回复" />
             <mu-menu-item title="标记" />
             <mu-menu-item @click="del(index)" title="删除" />
@@ -27,7 +27,7 @@
       </transition-group>
     </mu-list>
     <mu-float-button class="fba" secondary mini @click="add()" >
-        <Icon name="add" />
+        <cc-icon name="add" />
     </mu-float-button>
   </div>
 </template>

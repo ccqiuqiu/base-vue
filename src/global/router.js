@@ -4,11 +4,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import common from '../module/common/router'
-import book from '../module/book/router'
-import fly from '../module/fly/router'
-import message from '../module/message/router'
-import my from '../module/my/router'
+import common from '../modules/common/router'
+import book from '../modules/book/router'
+import fly from '../modules/fly/router'
+import message from '../modules/message/router'
+import my from '../modules/my/router'
 
 Vue.use(Router)
 

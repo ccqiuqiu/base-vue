@@ -1,17 +1,20 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <div  v-if="headerBar.show">
-    <mu-appbar :title="headerBar.title">
+  <div v-if="headerBar.show" class="header-bar">
+    <mu-appbar>
       <template slot="left">
-        <mu-icon-button :key="btn.icon" v-for="btn in leftBtn"  @click="btn.handle">
-          <Icon :name="btn.icon"/>
+        <mu-icon-button :key="btn.icon" v-for="btn in leftBtn"  @click="handler(btn)">
+          <cc-icon :name="btn.icon"/>
         </mu-icon-button>
       </template>
-
+      <component v-bind:is="title" />
       <template slot="right">
-        <mu-icon-button :key="btn.icon" v-for="btn in rightBtn"  @click="btn.handle">
-          <Icon :name="btn.icon"/>
+        <mu-icon-button :key="btn.icon" v-for="btn in rightBtn"  @click="handler(btn)" v-if="btn.icon">
+          <cc-icon :name="btn.icon"/>
         </mu-icon-button>
+        <span class="f-26" @click="handler(btn)" v-else>
+          {{btn.text}}
+        </span>
       </template>
     </mu-appbar>
   </div>
@@ -22,7 +25,17 @@
   export default {
     components: {},
     data() {
-      return {}
+      return {
+        title: {
+          render: h => {
+            if (typeof this.headerBar.title === 'string') {
+              return h('span', this.headerBar.title)
+            } else {
+              return this.headerBar.title()
+            }
+          }
+        }
+      }
     },
     methods: {
       createBtns (obj) {
@@ -31,17 +44,17 @@
           if (obj === 'back') {
             re.push({
               icon: obj,
-              handle: () => this.$r.back()
+              handler: () => this.$r.back()
             })
           } else if (obj === 'home') {
             re.push({
               icon: obj,
-              handle: () => this.$r.push('/')
+              handler: () => this.$r.push('/')
             })
           } else if (obj === 'more') {
             re.push({
               icon: obj,
-              handle: () => {}
+              handler: () => {}
             })
           } else if (this.$isArray(obj)) {
             re.push(...obj)
@@ -50,6 +63,9 @@
           }
         }
         return re
+      },
+      handler (btn) {
+        btn.handler && btn.handler()
       }
     },
     computed: {
@@ -64,3 +80,9 @@
   }
 </script>
 
+<style lang="less" scoped>
+  @import "../../assets/css/vars";
+  .header-bar /deep/ .right > span:last-child {
+    margin-right: 32/@rem;
+  }
+</style>

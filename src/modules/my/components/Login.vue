@@ -8,7 +8,7 @@
       <div flex="cross:center main:justify">
         <span>忘记密码？</span>
         <mu-icon-button @click="login">
-          <Icon name="login" size="36" color="#ff4081"/>
+          <cc-icon name="login" size="36" color="#ff4081"/>
         </mu-icon-button>
       </div>
     </mu-card-text>

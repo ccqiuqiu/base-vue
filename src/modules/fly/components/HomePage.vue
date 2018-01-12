@@ -7,10 +7,10 @@
       </mu-card-text>
       <mu-card-actions flex="main:right">
         <mu-flat-button label="值机" class="m-l-16">
-          <Icon name="check-in" size="36" />
+          <cc-icon name="check-in" size="36" />
         </mu-flat-button>
         <mu-flat-button label="改期" secondary class="m-l-16">
-          <Icon name="change-date" size="36" />
+          <cc-icon name="change-date" size="36" />
         </mu-flat-button>
       </mu-card-actions>
     </mu-card>

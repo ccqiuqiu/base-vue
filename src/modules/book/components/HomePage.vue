@@ -15,14 +15,14 @@
             </div>
           </div>
           <span>
-            <Icon @click.native="changeAirPort" name="change" size="50" class="m-l-10" />
+            <cc-icon @click.native="changeAirPort" name="change" size="50" class="m-l-10" />
           </span>
         </div>
       </mu-card-text>
     </mu-card>
 
     <mu-raised-button class="m-t-40" label="查询机票" secondary fullWidth @click="search">
-      <Icon name="search" size="36" />
+      <cc-icon name="search" size="36" />
     </mu-raised-button>
   </div>
 </template>

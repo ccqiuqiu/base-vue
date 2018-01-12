@@ -15,7 +15,7 @@
               <span class="plane">
                 {{flight.plane}}
               </span>
-          <Icon name="plane" size="36" />
+          <cc-icon name="plane" size="36" />
         </div>
       </div>
       <div flex="dir:top cross:center">

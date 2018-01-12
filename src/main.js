@@ -17,8 +17,8 @@ import './assets/css/theme.less'
 // })
 Vue.use(MuseUI)
 
-import Icon from './baseComponents/Icon.vue'
-Vue.component('Icon', Icon)
+import Icon from './baseComponents/CcIcon.vue'
+Vue.component('CcIcon', Icon)
 
 // 样式
 import 'flex.css'

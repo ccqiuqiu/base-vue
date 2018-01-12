@@ -10,24 +10,24 @@
     <div flex-box="0">
       <footer-bar></footer-bar>
     </div>
-    <loading></loading>
+    <cc-loading></cc-loading>
     <mu-toast v-if="toast" :message="toast.message"/>
-    <my-dialog></my-dialog>
+    <cc-dialog></cc-dialog>
   </div>
 </template>
 
 <script>
   import {mapState} from 'vuex'
-  import HeaderBar from './module/common/HeaderBar.vue'
-  import FooterBar from './module/common/FooterBar.vue'
-  import Loading from '$bc/Loading'
-  import MyDialog from '$bc/MyDialog'
+  import HeaderBar from './modules/common/HeaderBar.vue'
+  import FooterBar from './modules/common/FooterBar.vue'
+  import CcLoading from '$bc/CcLoading'
+  import CcDialog from '$bc/CcDialog'
 
   export default {
     data() {
       return {}
     },
-    components: { HeaderBar, FooterBar, Loading, MyDialog },
+    components: { HeaderBar, FooterBar, CcLoading, CcDialog },
     computed: {
       ...mapState(['toast'])
     },
