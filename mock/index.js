@@ -4,8 +4,8 @@
 // mock的写法参照 http://mockjs.com
 import Mock from 'mockjs'
 
-Mock.mock('/login', option => {
-  const user = JSON.parse(option.body).user
+Mock.mock(/\/login.*/, option => {
+  const user = JSON.parse(option.body)
   if (user.userName === 'cc' && user.passWord === 'e10adc3949ba59abbe56e057f20f883e') {
     return {
       success: true,
