@@ -3,6 +3,7 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
+import common from '../modules/common/vuex'
 
 Vue.use(Vuex)
 
@@ -66,7 +67,7 @@ const store = new Vuex.Store({
   getters: getters,
   mutations: mutations,
   actions: actions,
-  modules: {}
+  modules: {common}
 })
 
 export default store

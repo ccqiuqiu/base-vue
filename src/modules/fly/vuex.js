@@ -1,5 +1,4 @@
 import api from './api'
-import {alert} from '$js/utils'
 
 /**
  * Created by 熊超超 on 2017/8/4.
@@ -10,10 +9,12 @@ export default {
   mutations: {},
   actions: {
     async getFly ({state, commit, rootState}, params) {
-      const {err, data} = await api.getFly()
-      if (err) {
-        alert(err.message)
+      const config = {
+        _loading: '自定义loading'
+        // _hideGlobalError: true
       }
+      params = {...config, ...params}
+      const {data} = await api.getFly(params)
       return data
     }
   },

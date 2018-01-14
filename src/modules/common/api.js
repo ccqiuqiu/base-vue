@@ -4,8 +4,8 @@
 import conn from '../../global/conn'
 
 export default {
-  getFly: params => {
-    return conn.post('/fly/list', params)
+  test: () => {
+    return conn.get('/fly/list')
       .then(data => ({data})).catch(err => ({err}))
   }
 }

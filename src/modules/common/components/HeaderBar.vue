@@ -81,7 +81,7 @@
 </script>
 
 <style lang="less" scoped>
-  @import "../../assets/css/vars";
+  @import "../../../assets/css/vars";
   .header-bar /deep/ .right > span:last-child {
     margin-right: 32/@rem;
   }

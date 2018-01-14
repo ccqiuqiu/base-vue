@@ -20,7 +20,7 @@
 <script>
   import {mapState} from 'vuex'
   import mixin from '$g/mixin'
-  import CFlight from '../../common/C-Flight'
+  import CFlight from '../../common/components/C-Flight'
 
   export default {
     components: {CFlight},

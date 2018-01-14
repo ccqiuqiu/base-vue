@@ -18,8 +18,8 @@
 
 <script>
   import {mapState} from 'vuex'
-  import HeaderBar from './modules/common/HeaderBar.vue'
-  import FooterBar from './modules/common/FooterBar.vue'
+  import HeaderBar from './modules/common/components/HeaderBar.vue'
+  import FooterBar from './modules/common/components/FooterBar.vue'
   import CcLoading from '$bc/CcLoading'
   import CcDialog from '$bc/CcDialog'
 
