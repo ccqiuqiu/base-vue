@@ -1,4 +1,4 @@
-import api from './api'
+import api from '$g/api'
 
 /**
  * Created by 熊超超 on 2017/8/4.

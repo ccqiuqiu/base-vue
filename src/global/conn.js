@@ -16,24 +16,28 @@ const axiosInstance = axios.create({
 })
 // 注册请求拦截器
 axiosInstance.interceptors.request.use(config => {
-  config.data = config.data || {}
   // 从请求参数里面取出一些控制参数, 控制loading的显示
-  const {_loading} = config.data
-  if (_loading !== false) {
+  const {_loading, _hideGlobalError, ...data} = config.data
+  config.headers._loading = _loading !== false
+  config.headers._hideGlobalError = _hideGlobalError
+  if (config.method === 'get') {
+    config.params = data
+  } else {
+    config.data = data
+  }
+  if (config.headers._loading !== false) {
     store.commit('showLoading', _loading)
   }
-  config.data.common = {} // 可加公共参数
   return config
 }, err => {
-  // 请求错误时,暂时还没有发现什么时候会触发
   alert(err)
   return Promise.reject(err)
 })
 // 注册响应拦截器
 axiosInstance.interceptors.response.use(response => {
   // 从请求参数里面取出一些控制参数, 控制loading的显示,err的处理
-  const {_loading, _hideGlobalError} = JSON.parse(response.config.data)
-  if (_loading !== false) {
+  let {_loading, _hideGlobalError} = response.config.headers
+  if (_loading) {
     store.commit('hideLoading')
   }
   // 接口返回成功的时候，将返回数据resolve
@@ -53,8 +57,8 @@ axiosInstance.interceptors.response.use(response => {
 }, error => {
   // todo 此处应该记录err日志
   // 这里是服务端的异常，如404，500等
-  const {_loading, _hideGlobalError} = JSON.parse(error.response.config.data)
-  if (_loading !== false) {
+  const {_loading, _hideGlobalError} = error.response.config.headers
+  if (_loading) {
     store.commit('hideLoading')
   }
   // 默认情况下，此处统一提示服务端的错误信息，除非请求的时候设置了_hideGlobalError为true

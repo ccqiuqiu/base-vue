@@ -3,21 +3,14 @@
   <div>
     <mu-list class="list">
       <mu-sub-header>系统消息</mu-sub-header>
-      <transition-group
-        enter-to-class="animated fadeInLeft"
-        enter-class="animated fadeInLeft"
-        enter-active-class="list-complete-leave-active"
-        leave-active-class="list-complete-leave-active"
-        leave-to-class="animated fadeOutLeft"
-        move-class="list-complete-item">
-        <!--<transition-group name="list-complete">-->
+        <transition-group name="list-complete">
         <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
           <cc-icon :name="message.img" size="100" slot="leftAvatar"/>
           <div slot="describe" @click="$r.push('/message/detail')">
             <div>{{message.describe}}</div>
             <div>{{message.time}}</div>
           </div>
-          <mu-icon-menu slot="right" tooltip="操作" icon="">
+          <mu-icon-menu slot="right" icon="">
             <cc-icon slot="icon" name="more" size="36" />
             <mu-menu-item title="回复" />
             <mu-menu-item title="标记" />

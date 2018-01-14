@@ -1,4 +1,4 @@
-import api from './api'
+import api from '$g/api'
 import {alert} from '$js/utils'
 
 /**
