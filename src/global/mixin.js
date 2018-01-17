@@ -78,5 +78,24 @@ export default {
         }
       }
     }
+  },
+  // 保存滚动位置，后退还原
+  scroll: {
+    data () {
+      return {
+        scrollDom: null,
+        y: 0
+      }
+    },
+    activated () {
+      this.scrollDom && setTimeout(() => {
+        this.scrollDom.scrollTop = this.y
+        this.y = 0
+      }, 500)
+    },
+    deactivated () {
+      this.scrollDom = document.querySelector('.content-view').querySelector('div')
+      this.y = this.scrollDom.scrollTop
+    }
   }
 }

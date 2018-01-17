@@ -32,7 +32,7 @@
 
   export default {
     components: {CFlight},
-    mixins: [mixin.updateBar],
+    mixins: [mixin.updateBar, mixin.scroll],
     data() {
       return {
         headerBar: {title: this.$t('消息'), leftBtn: null},

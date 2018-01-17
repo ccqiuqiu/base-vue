@@ -28,6 +28,9 @@ axiosInstance.interceptors.request.use(config => {
   if (config.headers._loading !== false) {
     store.commit('showLoading', _loading)
   }
+  // 加公共参数到headers,注意此处如果有中文，要encodeURIComponent，否则不用
+  config.headers._common = encodeURIComponent(JSON.stringify({a: 1, b: '哈哈'}))
+  config.headers._common = JSON.stringify({a: 1, b: '2'})
   return config
 }, err => {
   alert(err)
