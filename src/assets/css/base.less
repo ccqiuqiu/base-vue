@@ -43,21 +43,20 @@ html, body, #app {
 
 .content-view {
   position: relative;
-  // 解决iOS上的滚动的问题
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0,0,0);
   //background-color: @grey50;
   >div{
     z-index: 2;
     background-color: @white;
-    //min-height: ~"calc(100% + 1px)"; // 解决iOS上有时候不能滚动的问题
     width: 100%;
     height: 100%;
     position: absolute;
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    // 解决iOS上的滚动的问题
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
 
     &.v-leave-to {
       z-index: 1;
