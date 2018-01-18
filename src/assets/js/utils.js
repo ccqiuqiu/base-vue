@@ -1,9 +1,9 @@
 /**
  * Created by 熊超超 on 2017/8/15.
  */
-import moment from 'moment'
 import store from '$g/store'
 import routerUtils from '$g/routerUtils'
+import dateUtils from './dateUtils'
 
 let locale = null
 let i18n = null
@@ -28,13 +28,13 @@ export default {
   install (Vue, $i18n) {
     i18n = $i18n
     locale = i18n.locale
-    moment.locale(locale)
-    Vue.prototype.$moment = moment
+    dateUtils.config(locale)
     Vue.prototype.$toast = toast
     Vue.prototype.$alert = alert
     Vue.prototype.$dialog = dialog
     Vue.prototype.$isArray = isArray
     Vue.prototype.$r = routerUtils
+    Vue.prototype.$date = dateUtils
     // 混入
     Vue.mixin({
       filters: {}
@@ -42,4 +42,4 @@ export default {
   }
 }
 // 此处导出是给js文件使用
-export { moment, toast, alert, dialog, isArray, locale, i18n }
+export { toast, alert, dialog, isArray, locale, i18n, dateUtils as date }

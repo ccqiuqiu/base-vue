@@ -24,6 +24,8 @@
     <mu-raised-button class="m-t-40" label="查询机票" secondary fullWidth @click="search">
       <cc-icon name="search" size="36" />
     </mu-raised-button>
+
+    {{aa}}
   </div>
 </template>
 
@@ -36,7 +38,8 @@
     data() {
       return {
         headerBar: {title: this.$t('预定'), leftBtn: null},
-        footerBar: {active: '/book'}
+        footerBar: {active: '/book'},
+        aa: this.$date.format(new Date(2014, 1, 11), 'dddd')
       }
     },
     computed: {
