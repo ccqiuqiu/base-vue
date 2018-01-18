@@ -53,13 +53,15 @@ html, body, #app {
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    // 解决iOS上的滚动的问题
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0,0,0);
 
     &.v-leave-to {
       z-index: 1;
     }
+  }
+  // 解决iOS上的滚动的问题
+  >div::after{
+    content: "";
+    min-height: calc(100% + 1Px);
   }
   > #loading{
     background-color: transparent;
