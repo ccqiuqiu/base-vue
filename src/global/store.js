@@ -31,8 +31,8 @@ const mutations = {
   changeIsHome (state, val) {
     state.isHome = val
   },
-  updateHeaderBar (state, {title, leftBtn = 'back', rightBtn = null, show = true}) {
-    state.headerBar = {title, leftBtn, rightBtn, show}
+  updateHeaderBar (state, {title, component, leftBtn = 'back', rightBtn = null, show = true}) {
+    state.headerBar = {title, component, leftBtn, rightBtn, show}
   },
   updateFooterBar (state, {active = '/book', show = false}) {
     state.footerBar = {active, show}

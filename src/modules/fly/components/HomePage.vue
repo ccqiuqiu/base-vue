@@ -27,7 +27,10 @@
     mixins: [mixin.updateBar],
     data() {
       return {
-        headerBar: {title: this.$t('飞行'), leftBtn: null},
+        headerBar: {
+          title: () => <div><cc-icon name="fly" size="36" />{this.$t('飞行')}</div>,
+          leftBtn: null
+        },
         footerBar: {active: '/fly'},
         list: []
       }

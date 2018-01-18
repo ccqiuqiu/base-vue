@@ -24,6 +24,10 @@ Vue.component('CcIcon', Icon)
 import 'flex.css'
 import './assets/css/base.less'
 
+// import vueg from 'vueg'
+// import 'vueg/css/transition-min.css'
+// Vue.use(vueg, router)
+
 // 国际化相关
 const locale = window.localStorage.getItem('lang') || 'zh-cn' // 语言标识
 import VueI18n from 'vue-i18n'

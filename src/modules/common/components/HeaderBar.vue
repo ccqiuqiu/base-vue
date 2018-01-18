@@ -26,15 +26,6 @@
     components: {},
     data() {
       return {
-        title: {
-          render: h => {
-            if (typeof this.headerBar.title === 'string') {
-              return h('span', this.headerBar.title)
-            } else {
-              return this.headerBar.title()
-            }
-          }
-        }
       }
     },
     methods: {
@@ -75,6 +66,25 @@
       },
       rightBtn() {
         return this.createBtns(this.headerBar.rightBtn)
+      },
+      title () {
+        if (this.headerBar) {
+          if (this.headerBar.component) {
+            return this.headerBar.component()
+          }
+          if (this.headerBar.title) {
+            return {
+              render: h => {
+                if (typeof this.headerBar.title === 'string') {
+                  return h('span', this.headerBar.title)
+                } else {
+                  return this.headerBar.title()
+                }
+              }
+            }
+          }
+        }
+        return null
       }
     }
   }
