@@ -29,7 +29,8 @@
       return {
         headerBar: {
           title: () => <div><cc-icon name="fly" size="36" />{this.$t('飞行')}</div>,
-          leftBtn: null
+          leftBtn: null,
+          rightBtn: [{text: '删除'}]
         },
         footerBar: {active: '/fly'},
         list: []
