@@ -25,7 +25,7 @@
       <cc-icon name="search" size="36" />
     </mu-raised-button>
 
-    {{aa}}
+    <span>{{aa}}</span>
   </div>
 </template>
 
