@@ -1,6 +1,6 @@
 <!--Created by 熊超超(https://github.com/ccqiuqiu) on 2018/1/30.-->
 <template>
-  <div ref="wrapper" class="scroll-view" :style="{positions: noRoot ? 'relative': 'absolute'}">
+  <div ref="wrapper" class="scroll-wrapper" :style="{position: noRoot ? 'relative': 'absolute'}">
     <div class="scroll-content" ref="listWrapper">
       <slot></slot>
       <slot name="pullup" :pullUpLoad="pullUpLoad" :isPullUpLoad="isPullUpLoad">
@@ -288,7 +288,7 @@
 </script>
 
 <style lang="less" scoped>
-  .scroll-view{
+  .scroll-wrapper{
     width: 100%;
     height: 100%;
     /*position: relative;*/
