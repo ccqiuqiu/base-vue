@@ -1,28 +1,30 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <scroll>
-    <mu-list class="list">
-      <mu-sub-header>系统消息</mu-sub-header>
-      <transition-group name="list-complete">
-        <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
-          <cc-icon :name="message.img" size="100" slot="leftAvatar"/>
-          <div slot="describe" @click="$r.push('/message/detail')">
-            <div>{{message.describe}}</div>
-            <div>{{message.time}}</div>
-          </div>
-          <mu-icon-menu slot="right" icon="">
-            <cc-icon slot="icon" name="more" size="36" />
-            <mu-menu-item title="回复" />
-            <mu-menu-item title="标记" />
-            <mu-menu-item @click="del(index)" title="删除" />
-          </mu-icon-menu>
-        </mu-list-item>
-      </transition-group>
-    </mu-list>
+  <div>
+    <scroll>
+      <mu-list class="list">
+        <mu-sub-header>系统消息</mu-sub-header>
+        <transition-group name="list-complete">
+          <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
+            <cc-icon :name="message.img" size="100" slot="leftAvatar"/>
+            <div slot="describe" @click="$r.push('/message/detail')">
+              <div>{{message.describe}}</div>
+              <div>{{message.time}}</div>
+            </div>
+            <mu-icon-menu slot="right" icon="">
+              <cc-icon slot="icon" name="more" size="36" />
+              <mu-menu-item title="回复" />
+              <mu-menu-item title="标记" />
+              <mu-menu-item @click="del(index)" title="删除" />
+            </mu-icon-menu>
+          </mu-list-item>
+        </transition-group>
+      </mu-list>
+    </scroll>
     <mu-float-button class="fba" secondary mini @click="add()" >
       <cc-icon name="add" />
     </mu-float-button>
-  </scroll>
+  </div>
 </template>
 
 <script>
@@ -93,6 +95,7 @@
     transform: translateX(-100%);
   }
   .fba{
+    z-index: 20;
     position: fixed;
     right: 16px;
     bottom: ~"calc(1rem + 16px)";

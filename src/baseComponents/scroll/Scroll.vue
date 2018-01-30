@@ -285,6 +285,11 @@
 
 <style lang="less" scoped>
   .scroll-view{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+
     .scroll-content{
       position: relative;
       z-index: 10;
