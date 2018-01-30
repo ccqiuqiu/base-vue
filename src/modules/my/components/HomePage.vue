@@ -1,6 +1,6 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <div class="my">
+  <scroll class="my">
     <transition enter-active-class="animated flipInX" leave-active-class="animated flipOutX" mode="out-in">
       <component v-bind:is="view"></component>
     </transition>
@@ -32,7 +32,7 @@
     <div class="p-40" v-if="user.id">
       <mu-raised-button label="退出登录" fullWidth @click="logout"></mu-raised-button>
     </div>
-  </div>
+  </scroll>
 </template>
 
 <script>

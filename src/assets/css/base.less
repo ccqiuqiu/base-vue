@@ -50,24 +50,14 @@ html, body, #app {
     width: 100%;
     height: 100%;
     position: absolute;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
 
     &.v-leave-to {
       z-index: 1;
     }
   }
-  // 解决iOS上的滚动的问题
-  >div::after{
-    content: "";
-    min-height: calc(100% + 1Px);
-  }
   > #loading{
     background-color: transparent;
-  }
-  .self-scroll::after{
-    display: none;
   }
 }
 

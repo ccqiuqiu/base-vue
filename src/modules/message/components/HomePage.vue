@@ -1,9 +1,9 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <div>
+  <scroll>
     <mu-list class="list">
       <mu-sub-header>系统消息</mu-sub-header>
-        <transition-group name="list-complete">
+      <transition-group name="list-complete">
         <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
           <cc-icon :name="message.img" size="100" slot="leftAvatar"/>
           <div slot="describe" @click="$r.push('/message/detail')">
@@ -20,19 +20,20 @@
       </transition-group>
     </mu-list>
     <mu-float-button class="fba" secondary mini @click="add()" >
-        <cc-icon name="add" />
+      <cc-icon name="add" />
     </mu-float-button>
-  </div>
+  </scroll>
 </template>
 
 <script>
   import {mapState} from 'vuex'
   import mixin from '$g/mixin'
   import CFlight from '../../common/components/C-Flight'
+  // import BScroll from 'better-scroll'
 
   export default {
     components: {CFlight},
-    mixins: [mixin.updateBar, mixin.scroll],
+    mixins: [mixin.updateBar],
     data() {
       return {
         headerBar: {title: this.$t('消息'), leftBtn: null},
@@ -46,6 +47,11 @@
     created () {
       this.getMessage()
     },
+    // mounted() {
+    //   this.$nextTick(() => {
+    //     this.scroll = new BScroll(this.$refs.wrapper, {})
+    //   })
+    // },
     methods: {
       async getMessage () {
         const {err, data} = await this.$store.dispatch('getMessage')

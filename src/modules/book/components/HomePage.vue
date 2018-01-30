@@ -1,6 +1,6 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <div class="p-16">
+  <scroll class="p-16">
     <mu-card class="m-t-20">
       <mu-card-text>
         <div flex="cross:center box:last">
@@ -26,7 +26,7 @@
     </mu-raised-button>
 
     <span>{{aa}}</span>
-  </div>
+  </scroll>
 </template>
 
 <script>

@@ -1,24 +1,39 @@
 <!--Created by 熊超超(https://github.com/ccqiuqiu) on 2018/1/10.-->
 <template>
-  <div @click="$r.push('/message/test')">
-    <p>detaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-    <p>detail</p>
-  </div>
+  <scroll>
+    <div @click="$r.push('/message/test')">
+      <p>detaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetaildetail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+      <p>detail</p>
+    </div>
+  </scroll>
 </template>
 
 <script>

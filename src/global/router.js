@@ -39,6 +39,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.isHome && !router.options.isBack && moduleName !== from.path.split('/')[1]) {
     store.commit('changeIsHome', true)
   }
+  to.meta.isBack = router.options.isBack
   router.options.isBack = false
   next()
 })

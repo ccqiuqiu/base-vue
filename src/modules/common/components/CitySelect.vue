@@ -1,16 +1,16 @@
 <!--Created by 熊超超 on 2017/12/9.-->
 <template>
-  <air-index-select class="self-scroll"
-    :data="data"
-    :hots="hots"
-    text-field="citynameCN"
-    sub-text-field="airportnameCN"
-    group-field="airportnameEN"
-    search-hit="出发地中文/拼音/英文/机场三字码"
-    :search-fields="searchFields"
-    :tabs="tabs"
-    key-field="itatCode"
-    @on-selected="selected"/>
+    <air-index-select
+      :data="data"
+      :hots="hots"
+      text-field="citynameCN"
+      sub-text-field="airportnameCN"
+      group-field="airportnameEN"
+      search-hit="出发地中文/拼音/英文/机场三字码"
+      :search-fields="searchFields"
+      :tabs="tabs"
+      key-field="itatCode"
+      @on-selected="selected"/>
 </template>
 
 <script>

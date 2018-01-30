@@ -11,7 +11,7 @@ export default {
   actions: {
     async getFly ({state, commit, rootState}, params) {
       const config = {
-        _loading: '自定义loading'
+        _loading: false
         // _hideGlobalError: true
       }
       params = {...config, ...params}

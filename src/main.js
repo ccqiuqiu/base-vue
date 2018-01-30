@@ -18,7 +18,9 @@ import './assets/css/theme.less'
 Vue.use(MuseUI)
 
 import Icon from './baseComponents/CcIcon.vue'
+import CcScrollView from './baseComponents/scroll/Scroll'
 Vue.component('CcIcon', Icon)
+Vue.component('scroll', CcScrollView)
 
 // 样式
 import 'flex.css'

@@ -88,10 +88,13 @@ export default {
       }
     },
     activated () {
-      this.scrollDom && setTimeout(() => {
-        this.scrollDom.scrollTop = this.y
-        this.y = 0
-      }, 500)
+      console.log(this.$route.meta.isBack)
+      if (this.$route.meta.isBack) {
+        this.scrollDom && setTimeout(() => {
+          this.scrollDom.scrollTop = this.y
+          this.y = 0
+        }, 500)
+      }
     },
     deactivated () {
       this.scrollDom = document.querySelector('.content-view').querySelector('div')
