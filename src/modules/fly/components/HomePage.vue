@@ -1,8 +1,8 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
-  <scroll pullDownRefresh @pullingDown="onPullingDown" :data="list">
-    <div>
-      <mu-card class="m-t-20" v-for="flight in list" :key="flight.id">
+  <air-scroll pullDownRefresh @pullingDown="onPullingDown" ref="scroll" :data="list" mouseWheel>
+    <div class="list">
+      <mu-card class="m-b-20" v-for="flight in list" :key="flight.id">
         <mu-card-text>
           <c-flight :flight="flight"></c-flight>
         </mu-card-text>
@@ -16,7 +16,7 @@
         </mu-card-actions>
       </mu-card>
     </div>
-  </scroll>
+  </air-scroll>
 </template>
 
 <script>
@@ -49,6 +49,8 @@
         const data = await this.$store.dispatch('getFly')
         if (data) {
           this.list = data.list
+        } else {
+          this.$refs.scroll.forceUpdate()
         }
       },
       onPullingDown () {

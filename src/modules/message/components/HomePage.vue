@@ -1,7 +1,7 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
-    <scroll>
+    <air-scroll mouseWheel>
       <mu-list class="list">
         <mu-sub-header>系统消息</mu-sub-header>
         <transition-group name="list-complete">
@@ -20,7 +20,7 @@
           </mu-list-item>
         </transition-group>
       </mu-list>
-    </scroll>
+    </air-scroll>
     <mu-float-button class="fba" secondary mini @click="add()" >
       <cc-icon name="add" />
     </mu-float-button>
