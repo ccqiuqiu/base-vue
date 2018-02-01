@@ -12,7 +12,6 @@ export function addClass(el, className) {
   newClass.push(className)
   el.className = newClass.join(' ')
 }
-
 export function removeClass(el, className) {
   if (!hasClass(el, className)) {
     return
