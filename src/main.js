@@ -51,7 +51,7 @@ if (process.env.MOCK) {
 
 import AirUI from 'airui-vue' // 引入组件库
 import 'airui-vue/theme/css/index.css' // 引入样式库
-Vue.use(AirUI)
+Vue.use(AirUI, {mouseWheel: true})
 
 Vue.config.productionTip = false
 

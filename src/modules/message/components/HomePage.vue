@@ -1,10 +1,10 @@
 <!--Created by 熊超超 on 2017/8/4.-->
 <template>
   <div>
-    <air-scroll mouseWheel>
+    <air-scroll>
       <mu-list class="list">
         <mu-sub-header>系统消息</mu-sub-header>
-        <transition-group name="list-complete">
+        <!--<transition-group name="list-complete">-->
           <mu-list-item :title="message.title" v-for="(message, index) in list" :key="message.id" class="b-b list-complete-item">
             <cc-icon :name="message.img" size="100" slot="leftAvatar"/>
             <div slot="describe" @click="$r.push('/message/detail')">
@@ -18,7 +18,7 @@
               <mu-menu-item @click="del(index)" title="删除" />
             </mu-icon-menu>
           </mu-list-item>
-        </transition-group>
+        <!--</transition-group>-->
       </mu-list>
     </air-scroll>
     <mu-float-button class="fba" secondary mini @click="add()" >
@@ -31,7 +31,6 @@
   import {mapState} from 'vuex'
   import mixin from '$g/mixin'
   import CFlight from '../../common/components/C-Flight'
-  // import BScroll from 'better-scroll'
 
   export default {
     components: {CFlight},
