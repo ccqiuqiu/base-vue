@@ -1,6 +1,6 @@
 <!--Created by 熊超超 on 2017/12/9.-->
 <template>
-    <air-index-select
+    <air-index-list
       :data="data"
       :hots="hots"
       text-field="citynameCN"

@@ -61,8 +61,9 @@ const mutations = {
 }
 const actions = {}
 
+const debug = process.env.NODE_ENV !== 'production'
 const store = new Vuex.Store({
-  strict: true,
+  strict: debug,
   state: state,
   getters: getters,
   mutations: mutations,

@@ -24,7 +24,7 @@
   import CcDialog from '$bc/CcDialog'
 
   export default {
-    data() {
+    data () {
       return {}
     },
     components: { HeaderBar, FooterBar, CcLoading, CcDialog },

@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "airui-vue": "^0.3.20",
+    "airui-vue": "^0.3.30",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "date-fns": "^2.0.0-alpha.7",
