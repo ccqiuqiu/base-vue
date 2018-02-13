@@ -4,6 +4,7 @@
 import store from '$g/store'
 import routerUtils from '$g/routerUtils'
 import dateUtils from './dateUtils'
+import c from './constant'
 
 let locale = null
 let i18n = null
@@ -23,6 +24,7 @@ const dialog = (content, title = '确认操作', confirmCb, cancelCb, confirmTex
 }
 
 const isArray = obj => Object.prototype.toString.call(obj) === '[object Array]'
+const isEmptyObject = (obj = {}) => Object.keys(obj).length <= 0
 
 export default {
   install (Vue, $i18n) {
@@ -33,8 +35,10 @@ export default {
     Vue.prototype.$alert = alert
     Vue.prototype.$dialog = dialog
     Vue.prototype.$isArray = isArray
+    Vue.prototype.$isEmptyObject = isEmptyObject
     Vue.prototype.$r = routerUtils
     Vue.prototype.$date = dateUtils
+    Vue.prototype.$c = c
     // 混入
     Vue.mixin({
       filters: {}
@@ -42,4 +46,4 @@ export default {
   }
 }
 // 此处导出是给js文件使用
-export { toast, alert, dialog, isArray, locale, i18n, dateUtils as date }
+export { toast, alert, dialog, isArray, isEmptyObject, locale, i18n, dateUtils as date, c }

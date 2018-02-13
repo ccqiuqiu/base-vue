@@ -32,13 +32,17 @@ import './assets/css/base.less'
 const locale = window.localStorage.getItem('lang') || 'zh-cn' // 语言标识
 import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
+const lang = require('./assets/js/i18n/' + locale + '.js')
 const i18n = new VueI18n({
   locale: locale,
+  numberFormats: {
+    [locale]: lang.numberFormats
+  },
   messages: {
-    'zh-cn': require('./assets/js/i18n/zh-cn').default,
-    'en-us': require('./assets/js/i18n/en-us').default
+    [locale]: lang.default
   }
 })
+
 // 注册一些工具类
 import utils from '$js/utils'
 Vue.use(utils, i18n)

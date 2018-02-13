@@ -7,3 +7,7 @@ export default {
   消息: '消息',
   我的: '我的'
 }
+export const numberFormats = {
+  currency: {style: 'currency', currency: 'CNY', currencyDisplay: 'symbol', minimumFractionDigits: 0},
+  currencyDecimal: {style: 'currency', currency: 'CNY', currencyDisplay: 'symbol'}
+}
