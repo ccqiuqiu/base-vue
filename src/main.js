@@ -31,15 +31,18 @@ import './assets/css/base.less'
 // 国际化相关
 const locale = window.localStorage.getItem('lang') || 'zh-cn' // 语言标识
 import VueI18n from 'vue-i18n'
+import zhCN from './assets/js/i18n/zh-cn'
+import enUS from './assets/js/i18n/en-us'
 Vue.use(VueI18n)
-const lang = require('./assets/js/i18n/' + locale + '.js')
 const i18n = new VueI18n({
   locale: locale,
-  numberFormats: {
-    [locale]: lang.numberFormats
-  },
   messages: {
-    [locale]: lang.default
+    'zh-cn': zhCN.lang,
+    'en-us': enUS.lang
+  },
+  numberFormats: {
+    'zh-cn': zhCN.numberFormats,
+    'en-us': enUS.numberFormats
   }
 })
 

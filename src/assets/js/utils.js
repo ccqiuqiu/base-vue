@@ -22,6 +22,18 @@ const alert = (content, title = '提示信息', confirmCb, confirmText = '确定
 const dialog = (content, title = '确认操作', confirmCb, cancelCb, confirmText = '确定', cancelText = '取消') => {
   store.commit('dialog', {title, content, confirmCb, cancelCb, confirmText, cancelText})
 }
+const dialogPromise = (content, title = '确认操作', confirmText = '确定', cancelText = '取消') => {
+  return new Promise((resolve) => {
+    store.commit('dialog', {
+      title,
+      content,
+      confirmCb: () => resolve(true),
+      cancelCb: () => resolve(false),
+      confirmText,
+      cancelText
+    })
+  })
+}
 
 const isArray = obj => Object.prototype.toString.call(obj) === '[object Array]'
 const isEmptyObject = (obj = {}) => Object.keys(obj).length <= 0
@@ -34,6 +46,7 @@ export default {
     Vue.prototype.$toast = toast
     Vue.prototype.$alert = alert
     Vue.prototype.$dialog = dialog
+    Vue.prototype.$dialogPromise = dialogPromise
     Vue.prototype.$isArray = isArray
     Vue.prototype.$isEmptyObject = isEmptyObject
     Vue.prototype.$r = routerUtils

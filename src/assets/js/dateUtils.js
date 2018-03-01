@@ -3,7 +3,8 @@
  */
 import zhCN from 'date-fns/esm/locale/zh-CN'
 import enUs from 'date-fns/esm/locale/en-US'
-import format from 'date-fns/esm/format' // 格式化
+import format from 'date-fns/esm/format'
+import differenceInMinutes from 'date-fns/esm/differenceInMinutes' // 格式化
 // import addDays from './addDays/index.js' // 加天
 // import addHours from './addHours/index.js' // 加小时
 // import addISOYears from './addISOYears/index.js'
@@ -138,14 +139,22 @@ import format from 'date-fns/esm/format' // 格式化
 // import subYears from './subYears/index.js'
 // import toDate from './toDate/index.js'
 
+let i18n = null
 const localeMap = {'zh-cn': zhCN, 'en-us': enUs}
+let locale = null
 const utils = {
-  locale: zhCN,
-  config: l => {
-    this.locale = localeMap[l] || this.locale
-    return utils
+  config: (l, _i18n) => {
+    locale = localeMap[l] || zhCN
+    i18n = _i18n
   },
-  format: (...args) => format(...args, {locale: this.locale})
+  format: (...args) => format(...args, {locale}),
+  // 计算2个时间间隔多少小时多少分钟
+  difference: (start, end) => {
+    const d = Math.abs(differenceInMinutes(new Date(start), new Date(end)))
+    const h = d / 60 | 0
+    const m = d % 60
+    return i18n.t('时分', [h, m])
+  }
 }
 
 export default utils

@@ -62,8 +62,19 @@
           this.list = data.list
         }
       },
-      del (index) {
-        this.list.splice(index, 1)
+      async del (index) {
+        // this.$dialog('确定要删除吗？', () => {
+        //   this.$dialog('删除后将不能恢复', () => {
+        //     this.list.splice(index, 1)
+        //   })
+        // })
+        const re = await this.$dialogPromise('确定要删除吗？')
+        if (re) {
+          const re2 = await this.$dialogPromise('删除后将不能恢复？')
+          if (re2) {
+            this.list.splice(index, 1)
+          }
+        }
       },
       add () {
         const message = this.list[0]
