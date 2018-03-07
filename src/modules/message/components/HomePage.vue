@@ -37,7 +37,7 @@
     mixins: [mixin.updateBar],
     data() {
       return {
-        headerBar: {title: this.$t('消息'), leftBtn: null},
+        headerBar: {title: this.$t('消息'), leftBtn: null, className: 'ccc'},
         footerBar: {active: '/message'},
         list: []
       }

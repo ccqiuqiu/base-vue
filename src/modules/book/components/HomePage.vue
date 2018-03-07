@@ -26,7 +26,7 @@
     </mu-raised-button>
 
     <span>{{aa}}</span>
-    {{$n(980, $c.nType.currency)}}
+    {{$n(9800, $c.nType.currency)}}
   </air-scroll>
 </template>
 
